@@ -77,9 +77,10 @@ export function HeroSection3D() {
           </div>
 
           {/* RIGHT CONTENT — 3D MODEL */}
-          <div className="w-full h-full max-w-[450px] md:max-w-[400px] lg:max-w-[600px] mx-auto">
-            <div className="pointer-events-none absolute inset-0 z-[-1]" />
-            <ReadingBook />
+          <div className="relative w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[500px] xl:h-[580px] flex items-center justify-center">
+            <div className="w-full h-full max-w-[450px] md:max-w-[400px] lg:max-w-[600px] mx-auto pointer-events-none">
+              <ReadingBook />
+            </div>
           </div>
         </div>
       </div>
