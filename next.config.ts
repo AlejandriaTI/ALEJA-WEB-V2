@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  compress: true,
   /* config options here */
   images: {
     domains: ["api.dicebear.com"],
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
