@@ -202,7 +202,7 @@ export function HeroSection() {
 
               {success && (
                 <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 flex items-center gap-3 text-green-400">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 shrink-0" />
                   <span className="text-sm font-medium">
                     ¡Formulario enviado con éxito!
                   </span>
@@ -211,7 +211,7 @@ export function HeroSection() {
 
               {error && (
                 <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 flex items-center gap-3 text-red-400">
-                  <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                  <AlertCircle className="w-5 h-5 shrink-0" />
                   <span className="text-sm font-medium">{error}</span>
                 </div>
               )}
