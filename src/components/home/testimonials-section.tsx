@@ -64,7 +64,7 @@ export function TestimonialsSection() {
                   {/* Avatar Placeholder */}
                   <div className="w-12 h-12 rounded-full bg-[#0CB2D5]/20 flex items-center justify-center border border-[#0CB2D5]/30">
                     <Image
-                      src={`https://api.dicebear.com/7.x/notionists/ongg?seed=${testimonial.author}`}
+                      src={`https://api.dicebear.com/7.x/notionists/png?seed=${testimonial.author}`}
                       alt={testimonial.author + "avatar"}
                       width={40}
                       height={40}
