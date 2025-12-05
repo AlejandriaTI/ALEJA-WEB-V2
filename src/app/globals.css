@@ -46,48 +46,67 @@
 :root {
   --radius: 0.625rem;
 
-  /* System Theme = Dark Navy (tema actual) */
+  /* Default Theme = Dark Navy */
   --background: #1C1C34;
   --foreground: #ffffff;
-
-  /* Cards & Surfaces (Slightly lighter than background) */
   --card: #232345;
   --card-foreground: #ffffff;
-
   --popover: #1C1C34;
-
   --popover-foreground: #ffffff;
-
-  /* Primary Brand Color (Cyan) */
   --primary: #068EAD;
   --primary-foreground: #ffffff;
-
-  /* Secondary (Darker/Lighter variations) */
   --secondary: #2A2A4A;
   --secondary-foreground: #ffffff;
-
-  /* Muted elements */
   --muted: #2A2A4A;
   --muted-foreground: #94a3b8;
-
-  /* Accents */
   --accent: #2A2A4A;
   --accent-foreground: #ffffff;
-
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-
-  /* Borders & Inputs */
   --border: #2A2A4A;
   --input: #2A2A4A;
   --ring: #0CB2D5;
-
   --chart-1: #0CB2D5;
   --chart-2: #2A2A4A;
   --chart-3: #1C1C34;
   --chart-4: #94a3b8;
   --chart-5: #ffffff;
+  --sidebar: #1C1C34;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0CB2D5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2A2A4A;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #2A2A4A;
+  --sidebar-ring: #0CB2D5;
+}
 
+/* Navy Theme (Sistema/Por defecto) */
+.navy {
+  --background: #1C1C34;
+  --foreground: #ffffff;
+  --card: #232345;
+  --card-foreground: #ffffff;
+  --popover: #1C1C34;
+  --popover-foreground: #ffffff;
+  --primary: #068EAD;
+  --primary-foreground: #ffffff;
+  --secondary: #2A2A4A;
+  --secondary-foreground: #ffffff;
+  --muted: #2A2A4A;
+  --muted-foreground: #94a3b8;
+  --accent: #2A2A4A;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2A2A4A;
+  --input: #2A2A4A;
+  --ring: #0CB2D5;
+  --chart-1: #0CB2D5;
+  --chart-2: #2A2A4A;
+  --chart-3: #1C1C34;
+  --chart-4: #94a3b8;
+  --chart-5: #ffffff;
   --sidebar: #1C1C34;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #0CB2D5;

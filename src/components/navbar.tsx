@@ -13,7 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { ModeToggle } from "./mode-toggle";
+import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -119,7 +119,7 @@ export function Navbar() {
 
             {/* Right side buttons */}
             <div className="flex gap-3 items-center">
-              <ModeToggle />
+              <AnimatedThemeToggler />
 
               <button
                 aria-label="Abrir whatsapp"
