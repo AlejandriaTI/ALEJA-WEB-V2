@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -15,20 +15,15 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
+import { useHasMounted } from "@/hooks/use-has-mounted";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const { theme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const hasMounted = useHasMounted();
 
-  useEffect(() => {
-    // This is the recommended pattern for preventing hydration mismatch with next-themes
-    // eslint-disable-next-line
-    setMounted(true);
-  }, []);
-
-  const currentTheme = mounted
+  const currentTheme = hasMounted
     ? theme === "system"
       ? resolvedTheme
       : theme
@@ -74,6 +69,11 @@ export function Navbar() {
     },
   ];
 
+  if (!hasMounted) {
+    return (
+      <nav className="w-full h-16 md:h-20 border-b fixed top-0 left-0 right-0 z-40 backdrop-blur-lg" />
+    );
+  }
   return (
     <>
       <nav
@@ -127,12 +127,24 @@ export function Navbar() {
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                          <div className="w-48 p-2 space-y-1 bg-[#1A1A2F] border border-[#26263F] rounded-md shadow-2xl">
+                          <div
+                            className={`w-48 p-2 space-y-1 rounded-md shadow-2xl border ${
+                              currentTheme === "light"
+                                ? "bg-white border-gray-200 text-gray-700"
+                                : currentTheme === "dark"
+                                ? "bg-[#0E0E16] border-gray-800 text-gray-300"
+                                : "bg-[#1C1C34] border-[#2A2A4A] text-[#B4C6D1]"
+                            }`}
+                          >
                             {item.subItems?.map((subItem) => (
                               <Link
                                 key={subItem.href}
                                 href={subItem.href}
-                                className="block px-4 py-2 text-sm text-[#B4C6D1] rounded-md hover:bg-[#0CB2D5]/10 hover:text-[#0CB2D5] transition-all"
+                                className={`block px-4 py-2 text-sm rounded-md transition-all ${
+                                  currentTheme === "light"
+                                    ? "hover:bg-primary/10 hover:text-primary"
+                                    : "hover:bg-[#0CB2D5]/10 hover:text-[#0CB2D5]"
+                                }`}
                               >
                                 {subItem.label}
                               </Link>
@@ -244,24 +256,48 @@ export function Navbar() {
 
         {/* Menu panel */}
         <div
-          className={`absolute right-0 top-0 h-full w-4/5 max-w-xs bg-[#1C1C34] shadow-2xl transform transition-transform duration-300 ease-in-out border-l border-[#2A2A4A] flex flex-col ${
+          className={`absolute right-0 top-0 h-full w-4/5 max-w-xs shadow-2xl transform transition-transform duration-300 ease-in-out border-l flex flex-col ${
             isOpen ? "translate-x-0" : "translate-x-full"
+          } ${
+            currentTheme === "light"
+              ? "bg-white border-gray-200"
+              : currentTheme === "dark"
+              ? "bg-black border-gray-800"
+              : "bg-[#1C1C34] border-[#2A2A4A]"
           }`}
         >
           {/* Close button */}
-          <div className="shrink-0 flex items-center justify-between p-4 border-b border-[#2A2A4A]">
-            <Image
-              src="/logo.png"
-              alt="Alejandría Consultora"
-              width={180}
-              height={40}
-              className="h-10 md:h-12 w-auto"
-            />
+          <div
+            className={`shrink-0 flex items-center justify-between p-4 border-b ${
+              currentTheme === "light" ? "border-gray-200" : "border-[#2A2A4A]"
+            }`}
+          >
+            {currentTheme === "light" ? (
+              <Image
+                src="/logo_azul.png"
+                alt="Alejandría Consultora"
+                width={180}
+                height={40}
+                className="h-10 md:h-12 w-auto"
+              />
+            ) : (
+              <Image
+                src="/logo.png"
+                alt="Alejandría Consultora"
+                width={180}
+                height={40}
+                className="h-10 md:h-12 w-auto"
+              />
+            )}
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="p-1 text-white hover:bg-[#0CB2D5]/10 hover:text-[#0CB2D5]"
+              className={`p-1 transition-colors ${
+                currentTheme === "light"
+                  ? "text-gray-900 hover:bg-primary/10 hover:text-primary"
+                  : "text-white hover:bg-primary/10 hover:text-primary"
+              }`}
             >
               <X className="h-5 w-5" />
               <span className="sr-only">Cerrar menú</span>
@@ -275,12 +311,20 @@ export function Navbar() {
                 <div key={item.label} className="space-y-1">
                   <button
                     onClick={() => toggleSubmenu(item.label)}
-                    className="w-full text-left px-4 py-2 text-sm font-medium text-white hover:bg-[#2A2A4A] rounded-md transition-all flex items-center justify-between"
+                    className={`w-full text-left px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center justify-between ${
+                      currentTheme === "light"
+                        ? "text-gray-900 hover:bg-gray-100"
+                        : "text-white hover:bg-[#2A2A4A]"
+                    }`}
                   >
                     <span>{item.label}</span>
                     <ChevronDown
-                      className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${
+                      className={`w-4 h-4 transition-transform duration-200 ${
                         openSubmenu === item.label ? "rotate-180" : ""
+                      } ${
+                        currentTheme === "light"
+                          ? "text-gray-600"
+                          : "text-slate-400"
                       }`}
                     />
                   </button>
@@ -297,7 +341,11 @@ export function Navbar() {
                           key={subItem.href}
                           href={subItem.href}
                           onClick={() => setIsOpen(false)}
-                          className="block px-4 py-2 text-sm text-slate-400 hover:text-[#0CB2D5] hover:bg-[#0CB2D5]/10 rounded-md transition-all"
+                          className={`block px-4 py-2 text-sm rounded-md transition-all ${
+                            currentTheme === "light"
+                              ? "text-gray-600 hover:text-primary hover:bg-primary/10"
+                              : "text-slate-400 hover:text-primary hover:bg-primary/10"
+                          }`}
                         >
                           {subItem.label}
                         </Link>
@@ -310,7 +358,11 @@ export function Navbar() {
                   key={item.label}
                   href={item.href || "#"}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 text-sm font-medium text-white hover:text-[#0CB2D5] hover:bg-[#0CB2D5]/10 rounded-md transition-all"
+                  className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                    currentTheme === "light"
+                      ? "text-gray-900 hover:text-primary hover:bg-primary/10"
+                      : "text-white hover:text-primary hover:bg-primary/10"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -319,10 +371,22 @@ export function Navbar() {
           </div>
 
           {/* Auth buttons at bottom - Always visible */}
-          <div className="shrink-0 p-4 space-y-3 border-t border-[#26263F] bg-[#16162c]">
+          <div
+            className={`shrink-0 p-4 space-y-3 border-t ${
+              currentTheme === "light"
+                ? "bg-white border-gray-200"
+                : currentTheme === "dark"
+                ? "bg-black border-gray-800"
+                : "bg-[#1C1C34] border-[#2A2A4A]"
+            }`}
+          >
             <button
               aria-label="Abrir whatsapp"
-              className="w-full flex gap-2 border border-[#26263F] rounded-xl items-center justify-center py-3 px-4 font-semibold text-[#B4C6D1] text-[15px] hover:bg-[#0CB2D5]/10 hover:text-white transition-all"
+              className={`w-full flex gap-2 border rounded-xl items-center justify-center py-3 px-4 font-semibold text-[15px] transition-all ${
+                currentTheme === "light"
+                  ? "border-gray-300 text-gray-700 hover:bg-primary/10 hover:text-primary"
+                  : "border-[#26263F] text-[#B4C6D1] hover:bg-primary/10 hover:text-white"
+              }`}
               onClick={() => setIsOpen(false)}
             >
               <Image
@@ -335,15 +399,29 @@ export function Navbar() {
             </button>
 
             <button
-              className="w-full flex gap-2 justify-center items-center py-3 px-4 text-[15px] font-semibold text-white border border-[#26263F] rounded-xl hover:bg-[#0CB2D5]/10 hover:border-[#0CB2D5]/50 transition-all"
+              aria-label="Abrir intranet"
+              className={`w-full flex gap-2 justify-center items-center py-3 px-4 text-[15px] font-semibold border rounded-xl transition-all ${
+                currentTheme === "light"
+                  ? "border-gray-300 text-gray-700 hover:bg-primary/10 hover:border-primary/50"
+                  : "border-[#26263F] text-white hover:bg-primary/10 hover:border-primary/50"
+              }`}
               onClick={() => setIsOpen(false)}
             >
-              <Image
-                src="/icons/alejaIcon.png"
-                width={20}
-                height={20}
-                alt="Intranet Alejandría"
-              />
+              {currentTheme === "light" ? (
+                <Image
+                  src="/icons/LogoOscuro.svg"
+                  alt="Alejandría Consultora"
+                  width={20}
+                  height={20}
+                />
+              ) : (
+                <Image
+                  src="/icons/LogoAlejandria.svg"
+                  alt="Alejandría Consultora"
+                  width={20}
+                  height={20}
+                />
+              )}
               INTRANET
             </button>
           </div>
