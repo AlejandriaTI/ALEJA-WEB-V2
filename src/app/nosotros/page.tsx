@@ -84,7 +84,7 @@ export default function Nosotros() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[500px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-primary/10">
+      <section className="relative h-[500px] w-full flex items-center justify-center overflow-hidden bg-linear-to-br from-primary/20 via-background to-primary/10">
         <div className="absolute inset-0 bg-grid-white/5" />
 
         <motion.div
@@ -96,7 +96,7 @@ export default function Nosotros() {
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Sobre Nosotros
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Transformamos Ideas en
             <br />
             Éxito Académico
@@ -359,7 +359,7 @@ export default function Nosotros() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+            <Card className="bg-linear-to-br from-primary/10 to-primary/5 border-primary/20">
               <CardContent className="p-12">
                 <Sparkles className="w-16 h-16 text-primary mx-auto mb-6" />
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">

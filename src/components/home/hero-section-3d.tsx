@@ -2,11 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import { Users, Award, TrendingUp } from "lucide-react";
-import ReadingBook from "../3D/reading-book";
+import Toga from "../3D/toga";
 
 export function HeroSection3D() {
   return (
-    <section className="relative pt-20 md:pt-24 lg:pt-28 pb-8 md:pb-12 lg:pb-16 bg-[#1C1C34] overflow-hidden">
+    <section className="relative pt-20 md:pt-24 lg:pt-28 pb-8 md:pb-12 lg:pb-16  overflow-hidden">
       {/* Background decor - Glowing Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#0CB2D5]/20 rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-pulse" />
@@ -79,7 +79,7 @@ export function HeroSection3D() {
           {/* RIGHT CONTENT — 3D MODEL */}
           <div className="relative w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[500px] xl:h-[580px] flex items-center justify-center">
             <div className="w-full h-full max-w-[450px] md:max-w-[400px] lg:max-w-[600px] mx-auto pointer-events-none">
-              <ReadingBook />
+              <Toga />
             </div>
           </div>
         </div>

@@ -59,7 +59,7 @@ export function FeaturedPost({
               HOSTING
             </span>
           </div>
-          <h3 className="text-xl font-bold text-foreground mb-3 flex-grow">
+          <h3 className="text-xl font-bold text-foreground mb-3 grow">
             INTRODUCCION DETALLADA A FASTPANEL: LA...
           </h3>
           <p className="text-sm text-muted-foreground mb-4">
