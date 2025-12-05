@@ -23,7 +23,7 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-[#1C1C34] relative overflow-hidden">
+    <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[20%] right-[10%] w-72 h-72 bg-[#0CB2D5]/10 rounded-full mix-blend-screen filter blur-[80px] opacity-30" />
