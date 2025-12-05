@@ -123,7 +123,7 @@ export default function Nosotros() {
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow">
                   <CardContent className="p-0">
                     <stat.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-                    <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                    <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2 ">
                       {stat.numero}
                     </h3>
                     <p className="text-sm text-muted-foreground">
