@@ -13,6 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -117,7 +118,9 @@ export function Navbar() {
             </div>
 
             {/* Right side buttons */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 items-center">
+              <AnimatedThemeToggler />
+
               <button
                 aria-label="Abrir whatsapp"
                 className="hidden lg:flex w-[190px] gap-2 border border-[#26263F] rounded-xl items-center py-2 px-4 font-semibold text-[#B4C6D1] text-[15px] hover:bg-[#0CB2D5]/10 hover:text-white transition-all"
