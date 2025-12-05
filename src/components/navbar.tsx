@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -20,8 +20,19 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const currentTheme = theme === "system" ? resolvedTheme : theme;
+  useEffect(() => {
+    // This is the recommended pattern for preventing hydration mismatch with next-themes
+    // eslint-disable-next-line
+    setMounted(true);
+  }, []);
+
+  const currentTheme = mounted
+    ? theme === "system"
+      ? resolvedTheme
+      : theme
+    : undefined;
 
   const toggleSubmenu = (label: string) => {
     setOpenSubmenu(openSubmenu === label ? null : label);

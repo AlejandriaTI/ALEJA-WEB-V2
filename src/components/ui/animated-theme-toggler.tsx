@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { flushSync } from "react-dom";
 import { useTheme } from "next-themes";
@@ -18,6 +18,13 @@ export const AnimatedThemeToggler = ({
 }: AnimatedThemeTogglerProps) => {
   const { theme, setTheme } = useTheme();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // This is the recommended pattern for preventing hydration mismatch with next-themes
+    // eslint-disable-next-line
+    setMounted(true);
+  }, []);
 
   const toggleTheme = useCallback(async () => {
     if (!buttonRef.current) return;
@@ -72,7 +79,7 @@ export const AnimatedThemeToggler = ({
       )}
       {...props}
     >
-      {theme === "light" ? (
+      {mounted && theme === "light" ? (
         <Sun className="h-5 w-5" />
       ) : (
         <Moon className="h-5 w-5" />
