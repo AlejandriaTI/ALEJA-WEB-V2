@@ -25,16 +25,22 @@ export default function ThesisPage() {
   const isLight = mounted && (theme === "light" || resolvedTheme === "light");
 
   return (
-    <div className="min-h-screen">
+    <div
+      className={`min-h-screen ${isLight ? "bg-gray-50/50" : "bg-[#0B0B13]"}`}
+    >
       {/* Hero Section */}
       <section className="relative h-[550px] w-full flex items-center justify-center overflow-hidden">
         {/* Fondo con efecto blur + luces */}
         <div className="absolute inset-0 pointer-events-none">
           <div
-            className={`absolute -top-10 left-1/2 w-[600px] h-[600px] rounded-full blur-3xl `}
+            className={`absolute -top-10 left-1/2 w-[600px] h-[600px] rounded-full blur-3xl ${
+              isLight ? "bg-primary/5" : "bg-cyan-500/20"
+            }`}
           ></div>
           <div
-            className={`absolute bottom-0 right-1/3 w-[500px] h-[500px] rounded-full blur-3xl `}
+            className={`absolute bottom-0 right-1/3 w-[500px] h-[500px] rounded-full blur-3xl ${
+              isLight ? "bg-blue-400/5" : "bg-blue-600/20"
+            }`}
           ></div>
         </div>
 
@@ -47,12 +53,14 @@ export default function ThesisPage() {
           >
             Impulsa tus proyectos con
             <br />
-            <span className="text-[#0CB2D5]">innovación y excelencia</span>
+            <span className={isLight ? "text-primary" : "text-cyan-400"}>
+              innovación y excelencia
+            </span>
           </h1>
 
           <p
             className={`mt-6 text-lg md:text-2xl font-light max-w-2xl mx-auto ${
-              isLight ? "text-gray-700" : "text-white"
+              isLight ? "text-gray-600" : "text-gray-300"
             }`}
           >
             Transformamos tus ideas en resultados tangibles. Investigación,
@@ -61,7 +69,11 @@ export default function ThesisPage() {
 
           <div className="mt-10 flex justify-center gap-4">
             <button
-              className={`px-8 py-3 font-semibold rounded-xl shadow-lg transition bg-[#0CB2D5] hover:bg-[#0aa1c0] text-black shadow-[#0CB2D5]/20`}
+              className={`px-8 py-3 font-semibold rounded-xl shadow-lg transition ${
+                isLight
+                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                  : "bg-cyan-500 hover:bg-cyan-400 text-black"
+              }`}
             >
               Comenzar ahora
             </button>
@@ -69,7 +81,7 @@ export default function ThesisPage() {
               className={`px-8 py-3 border rounded-xl transition ${
                 isLight
                   ? "border-gray-300 text-gray-700 hover:bg-gray-100"
-                  : "border-white/10 text-white hover:bg-white/5"
+                  : "border-white/30 text-white hover:bg-white/10"
               }`}
             >
               Ver servicios
@@ -84,7 +96,7 @@ export default function ThesisPage() {
           <div>
             <h2
               className={`font-semibold text-lg mb-4 ${
-                isLight ? "text-primary" : "text-[#0CB2D5]"
+                isLight ? "text-primary" : "text-cyan-400"
               }`}
             >
               ¡TE INVITAMOS A SUPERARTE!
@@ -95,16 +107,8 @@ export default function ThesisPage() {
               }`}
             >
               Nuestro servicio de asesoría en{" "}
-              <span
-                className={`italic font-extrabold text-transparent bg-clip-text bg-linear-to-r ${
-                  isLight
-                    ? "from-[#0CB2D5] to-blue-600"
-                    : "from-[#0CB2D5] to-white"
-                }`}
-              >
-                TESIS
-              </span>{" "}
-              está especialmente diseñado para que logres:
+              <span className="italic font-extrabold">TESIS</span> está
+              especialmente diseñado para que logres:
             </h3>
           </div>
 
@@ -114,10 +118,17 @@ export default function ThesisPage() {
               { icon: Brain, label: "Reducir el estrés" },
               { icon: Users, label: "Reforzar tu autoridad" },
             ].map((item, i) => (
-              <Card key={i} className={`p-6 text-center transition `}>
+              <Card
+                key={i}
+                className={`p-6 text-center transition ${
+                  isLight
+                    ? "bg-white border-gray-200 shadow-md hover:border-primary/50 hover:shadow-lg"
+                    : "bg-linear-to-br from-cyan-500/20 to-cyan-600/10 border-cyan-500/30 hover:border-cyan-400/50"
+                }`}
+              >
                 <item.icon
                   className={`w-12 h-12 mx-auto mb-4 ${
-                    isLight ? "text-primary" : "text-[#0CB2D5]"
+                    isLight ? "text-primary" : "text-cyan-400"
                   }`}
                 />
                 <p
@@ -137,7 +148,7 @@ export default function ThesisPage() {
           <h2 className="text-center mb-12">
             <p
               className={`font-semibold text-lg uppercase mb-2 ${
-                isLight ? "text-primary" : "text-[#0CB2D5]"
+                isLight ? "text-primary" : "text-cyan-400"
               }`}
             >
               Más que una Tesis:
@@ -182,12 +193,12 @@ export default function ThesisPage() {
                 <div
                   key={i}
                   className={`flex gap-4 pb-4 border-b ${
-                    isLight ? "border-gray-200" : "border-[#2A2A4A]"
+                    isLight ? "border-gray-200" : "border-slate-700"
                   }`}
                 >
                   <div
                     className={`w-1 shrink-0 ${
-                      isLight ? "bg-primary" : "bg-[#0CB2D5]"
+                      isLight ? "bg-primary" : "bg-cyan-400"
                     }`}
                   ></div>
                   <div>
@@ -214,21 +225,27 @@ export default function ThesisPage() {
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <div
                   className={`absolute inset-0 rounded-full blur-3xl ${
-                    isLight ? "bg-primary/20" : "bg-[#0CB2D5]/10 animate-pulse"
+                    isLight
+                      ? "bg-primary/20"
+                      : "bg-linear-to-br from-cyan-500/20 to-transparent"
                   }`}
                 ></div>
                 <div
-                  className={`relative w-full h-full rounded-full flex items-center justify-center border`}
+                  className={`relative w-full h-full rounded-full flex items-center justify-center border ${
+                    isLight
+                      ? "bg-white border-primary/20 shadow-xl"
+                      : "bg-linear-to-br from-cyan-400/30 to-blue-500/20 border-cyan-400/30"
+                  }`}
                 >
                   <div className="text-center">
                     <BookOpen
                       className={`w-24 h-24 mx-auto mb-4 ${
-                        isLight ? "text-primary" : "text-[#0CB2D5]"
+                        isLight ? "text-primary" : "text-cyan-400"
                       }`}
                     />
                     <p
                       className={`font-bold text-lg ${
-                        isLight ? "text-primary" : "text-[#0CB2D5]"
+                        isLight ? "text-primary" : "text-cyan-400"
                       }`}
                     >
                       Tesis
@@ -253,7 +270,7 @@ export default function ThesisPage() {
             className={`font-extrabold text-lg px-12 py-6 rounded-full italic uppercase h-auto ${
               isLight
                 ? "bg-amber-400 hover:bg-amber-500 text-gray-900"
-                : "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-[0_0_20px_rgba(251,191,36,0.2)]"
+                : "bg-amber-400 hover:bg-amber-500 text-slate-900"
             }`}
           >
             ¡Quiero empezar con mi tesis!
@@ -265,7 +282,7 @@ export default function ThesisPage() {
           <h2 className="text-center mb-16">
             <p
               className={`italic font-semibold text-lg uppercase mb-2 ${
-                isLight ? "text-primary" : "text-[#0CB2D5]"
+                isLight ? "text-primary" : "text-cyan-400"
               }`}
             >
               De la mano contigo:
@@ -299,24 +316,31 @@ export default function ThesisPage() {
                   desc: "Adaptada a tus necesidades para que comprendas cada detalle del proceso.",
                 },
               ].map((item, i) => (
-                <Card key={i} className={`p-6 transition `}>
+                <Card
+                  key={i}
+                  className={`p-6 transition ${
+                    isLight
+                      ? "bg-white border-gray-200 shadow-md hover:border-primary/50"
+                      : "bg-slate-800/50 border-slate-700 hover:border-cyan-400/50"
+                  }`}
+                >
                   <div className="flex items-start gap-4 mb-4">
                     <div
                       className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 border ${
                         isLight
                           ? "bg-primary/10 border-primary/20"
-                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20 group-hover:bg-[#0CB2D5]/20 transition-colors"
+                          : "bg-white/10 border-cyan-400/30"
                       }`}
                     >
                       <BookOpen
                         className={`w-8 h-8 ${
-                          isLight ? "text-primary" : "text-[#0CB2D5]"
+                          isLight ? "text-primary" : "text-cyan-400"
                         }`}
                       />
                     </div>
                     <p
                       className={`text-4xl font-bold opacity-50 ${
-                        isLight ? "text-primary" : "text-[#0CB2D5]"
+                        isLight ? "text-primary" : "text-cyan-400"
                       }`}
                     >
                       {item.num}
@@ -354,11 +378,18 @@ export default function ThesisPage() {
                   desc: "Preparación completa para la presentación y defensa de tu tesis.",
                 },
               ].map((item, i) => (
-                <Card key={i} className={`p-6 transition md:mt-24`}>
+                <Card
+                  key={i}
+                  className={`p-6 transition md:mt-24 ${
+                    isLight
+                      ? "bg-white border-gray-200 shadow-md hover:border-primary/50"
+                      : "bg-slate-800/50 border-slate-700 hover:border-cyan-400/50"
+                  }`}
+                >
                   <div className="flex items-start gap-4 mb-4">
                     <p
                       className={`text-4xl font-bold opacity-50 ${
-                        isLight ? "text-primary" : "text-[#0CB2D5]"
+                        isLight ? "text-primary" : "text-cyan-400"
                       }`}
                     >
                       {item.num}
@@ -367,12 +398,12 @@ export default function ThesisPage() {
                       className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 border ${
                         isLight
                           ? "bg-primary/10 border-primary/20"
-                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20 group-hover:bg-[#0CB2D5]/20 transition-colors"
+                          : "bg-white/10 border-cyan-400/30"
                       }`}
                     >
                       <CheckCircle2
                         className={`w-8 h-8 ${
-                          isLight ? "text-primary" : "text-[#0CB2D5]"
+                          isLight ? "text-primary" : "text-cyan-400"
                         }`}
                       />
                     </div>
@@ -398,7 +429,7 @@ export default function ThesisPage() {
           <h2 className="text-center mb-12">
             <p
               className={`font-semibold text-lg uppercase mb-2 ${
-                isLight ? "text-primary" : "text-[#0CB2D5]"
+                isLight ? "text-primary" : "text-cyan-400"
               }`}
             >
               Lo que dicen nuestros clientes:
@@ -429,7 +460,11 @@ export default function ThesisPage() {
             ].map((testimonial, i) => (
               <Card
                 key={i}
-                className={`rounded-xl border p-6 shadow-xl transition-all group`}
+                className={`rounded-xl border p-6 shadow-xl transition-all group ${
+                  isLight
+                    ? "bg-white border-gray-200 hover:shadow-2xl hover:border-primary/30"
+                    : "border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10"
+                }`}
               >
                 {/* Text */}
                 <p
