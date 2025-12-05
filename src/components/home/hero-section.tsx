@@ -57,7 +57,7 @@ export function HeroSection() {
         telefono: "",
       });
     } catch (err) {
-      setError("Ocurrió un error al enviar el formulario");
+      console.error("Error al enviar el formulario:", err);
     } finally {
       setLoading(false);
     }

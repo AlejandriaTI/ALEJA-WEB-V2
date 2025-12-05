@@ -1,15 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import {
-  BookOpen,
-  Brain,
-  Trophy,
-  Users,
-  CheckCircle2,
-  Star,
-} from "lucide-react";
-import Image from "next/image";
-
 export default function TSPPage() {
   return (
     <div className="min-h-screen ">
