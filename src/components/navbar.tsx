@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -18,6 +19,9 @@ import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const { theme, resolvedTheme } = useTheme();
+
+  const currentTheme = theme === "system" ? resolvedTheme : theme;
 
   const toggleSubmenu = (label: string) => {
     setOpenSubmenu(openSubmenu === label ? null : label);
@@ -61,19 +65,38 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="w-full border-b border-[#26263F] bg-[#121221]/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-40 shadow-md">
+      <nav
+        className={`w-full border-b fixed top-0 left-0 right-0 z-40 shadow-md transition-colors duration-300 ${
+          theme === "light"
+            ? "bg-white/95 border-gray-200 backdrop-blur-lg"
+            : theme === "dark"
+            ? "bg-black/95 border-gray-800 backdrop-blur-lg"
+            : "bg-[#121221]/80 border-[#26263F] backdrop-blur-lg"
+        }`}
+      >
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex h-16 md:h-20 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="shrink-0">
-              <Image
-                src="/logo.png"
-                alt="Alejandría Consultora"
-                width={180}
-                height={40}
-                priority
-                className="h-10 md:h-12 w-auto"
-              />
+              {currentTheme === "light" ? (
+                <Image
+                  src="/logo_azul.png"
+                  alt="Alejandría Consultora"
+                  width={180}
+                  height={40}
+                  priority
+                  className="h-10 md:h-12 w-auto"
+                />
+              ) : (
+                <Image
+                  src="/logo.png"
+                  alt="Alejandría Consultora"
+                  width={180}
+                  height={40}
+                  priority
+                  className="h-10 md:h-12 w-auto"
+                />
+              )}
             </Link>
 
             {/* Desktop Navigation */}
@@ -83,7 +106,13 @@ export function Navbar() {
                   {navigationItems.map((item) =>
                     item.trigger ? (
                       <NavigationMenuItem key={item.label}>
-                        <NavigationMenuTrigger className="text-sm font-medium text-white hover:text-[#0CB2D5] transition-colors bg-transparent hover:bg-[#0CB2D5]/10 focus:bg-[#0CB2D5]/10 focus:text-[#0CB2D5]">
+                        <NavigationMenuTrigger
+                          className={`text-sm font-medium transition-colors bg-transparent hover:bg-primary/10 focus:bg-primary/10 focus:text-primary ${
+                            theme === "light"
+                              ? "text-gray-900 hover:text-primary"
+                              : "text-white hover:text-primary"
+                          }`}
+                        >
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -105,7 +134,11 @@ export function Navbar() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={item.href || "#"}
-                            className="px-4 py-2 text-sm font-medium text-white hover:text-[#0CB2D5] transition-colors rounded-md hover:bg-[#0CB2D5]/10"
+                            className={`px-4 py-2 text-sm font-medium transition-colors rounded-md hover:bg-primary/10 ${
+                              theme === "light"
+                                ? "text-gray-900 hover:text-primary"
+                                : "text-white hover:text-primary"
+                            }`}
                           >
                             {item.label}
                           </Link>
@@ -118,31 +151,52 @@ export function Navbar() {
             </div>
 
             {/* Right side buttons */}
-            <div className="flex gap-3 items-center">
-              <AnimatedThemeToggler />
-
+            <div className="flex gap-3 items-center ml-auto">
               <button
                 aria-label="Abrir whatsapp"
-                className="hidden lg:flex w-[190px] gap-2 border border-[#26263F] rounded-xl items-center py-2 px-4 font-semibold text-[#B4C6D1] text-[15px] hover:bg-[#0CB2D5]/10 hover:text-white transition-all"
+                className={`hidden lg:flex w-[190px] gap-2 border rounded-xl py-2 px-4 font-semibold text-[15px] leading-tight items-center justify-center transition-all ${
+                  theme === "light"
+                    ? "border-gray-300 text-gray-700 hover:bg-primary/10 hover:text-primary"
+                    : "border-[#26263F] text-[#B4C6D1] hover:bg-primary/10 hover:text-white"
+                }`}
               >
                 <Image
                   src="/icons/whatss.png"
                   width={20}
                   height={20}
-                  alt="WhatsApp Alejandría"
+                  alt="WhatsApp"
                 />
                 Contáctanos
               </button>
 
-              <button className="hidden lg:flex gap-1 px-8 py-2 justify-center items-center text-[15px] font-semibold text-white border border-[#26263F] rounded-xl hover:bg-[#0CB2D5]/10 hover:border-[#0CB2D5]/50 transition-all">
-                <Image
-                  src="/icons/alejaIcon.png"
-                  width={20}
-                  height={20}
-                  alt="Intranet Alejandría"
-                />
+              <button
+                aria-label="Abrir intranet"
+                className={`hidden lg:flex w-[190px] gap-2 border rounded-xl items-center py-2 px-4 font-semibold text-[15px] transition-all justify-center ${
+                  theme === "light"
+                    ? "border-gray-300 text-gray-700 hover:bg-primary/10 hover:border-primary/50"
+                    : "border-[#26263F] text-white hover:bg-primary/10 hover:border-primary/50"
+                }`}
+              >
+                {currentTheme === "light" ? (
+                  <Image
+                    src="/icons/LogoOscuro.svg"
+                    alt="Alejandría Consultora"
+                    width={20}
+                    height={20}
+                    priority
+                  />
+                ) : (
+                  <Image
+                    src="/icons/LogoAlejandria.svg"
+                    alt="Alejandría Consultora"
+                    width={20}
+                    height={20}
+                    priority
+                  />
+                )}
                 INTRANET
               </button>
+              <AnimatedThemeToggler />
             </div>
 
             {/* Mobile button */}
@@ -150,7 +204,11 @@ export function Navbar() {
               variant="ghost"
               size="sm"
               aria-label="Abrir menú de navegación"
-              className="lg:hidden p-2 text-white hover:bg-[#0CB2D5]/10"
+              className={`lg:hidden p-2 transition-colors ${
+                theme === "light"
+                  ? "text-gray-900 hover:bg-primary/10"
+                  : "text-white hover:bg-primary/10"
+              }`}
               onClick={() => setIsOpen(true)}
             >
               <Menu className="h-6 w-6" />

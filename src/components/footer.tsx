@@ -3,21 +3,40 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export function Footer() {
+  const { theme, resolvedTheme } = useTheme();
+
+  const currentTheme = theme === "system" ? resolvedTheme : theme;
   return (
     <footer className="text-secondary-foreground/80 py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Image
-              src="/logo.png"
-              alt="Alejandría Consultora"
-              width={180}
-              height={40}
-              className="h-10 md:h-12 w-auto"
-            />
+            <Link href="/" className="shrink-0">
+              {currentTheme === "light" ? (
+                <Image
+                  src="/logo_azul.png"
+                  alt="Alejandría Consultora"
+                  width={180}
+                  height={40}
+                  priority
+                  className="h-10 md:h-12 w-auto mb-4"
+                />
+              ) : (
+                <Image
+                  src="/logo.png"
+                  alt="Alejandría Consultora"
+                  width={180}
+                  height={40}
+                  priority
+                  className="h-10 md:h-12 w-auto mb-4"
+                />
+              )}
+            </Link>
+
             <p className="text-sm leading-relaxed text-secondary-foreground/70">
               Asesoría académica profesional con más de 10 años de experiencia.
             </p>
