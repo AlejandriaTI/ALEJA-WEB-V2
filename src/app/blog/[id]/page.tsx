@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft } from "lucide-react";
 import { getArticleById } from "@/data/blog-articles";
+import { ArticleContent } from "@/components/blog/article-content";
 
 export default async function ArticlePage({
   params,
@@ -69,37 +70,11 @@ export default async function ArticlePage({
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="prose prose-invert max-w-none dark:prose-invert">
-          <article className="text-foreground leading-relaxed">
-            <div className="mb-8 text-muted-foreground italic">
-              {article.excerpt}
-            </div>
-            <div
-              className="space-y-6"
-              dangerouslySetInnerHTML={{
-                __html: article.content
-                  .replace(
-                    /<h2>/g,
-                    '<h2 className="text-2xl font-bold mt-8 mb-4 text-foreground">'
-                  )
-                  .replace(
-                    /<h3>/g,
-                    '<h3 className="text-xl font-bold mt-6 mb-3 text-foreground">'
-                  )
-                  .replace(/<p>/g, '<p className="mb-4">')
-                  .replace(
-                    /<ul>/g,
-                    '<ul className="list-disc list-inside mb-4 space-y-2">'
-                  )
-                  .replace(/<li>/g, '<li className="ml-4">')
-                  .replace(
-                    /<strong>/g,
-                    '<strong className="font-bold text-foreground">'
-                  ),
-              }}
-            />
-          </article>
+        <div className="mb-8 text-muted-foreground italic text-lg">
+          {article.excerpt}
         </div>
+
+        <ArticleContent content={article.content} />
 
         {/* Share and back */}
         <div className="mt-16 pt-8 border-t border-border">
