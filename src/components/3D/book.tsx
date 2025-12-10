@@ -14,7 +14,7 @@ function BookModel() {
   const group = useRef<THREE.Group | null>(null);
   const mixer = useRef<THREE.AnimationMixer | null>(null);
 
-  const gltf = useGLTF("/3D/book.glb") as unknown as GLTFResult;
+  const gltf = useGLTF("/3D/books_with_magnifier.glb") as unknown as GLTFResult;
   const { scene, animations } = gltf;
 
   useEffect(() => {
@@ -38,9 +38,9 @@ function BookModel() {
     <primitive
       ref={group}
       object={scene}
-      scale={3}
-      position={[0, 1, 0]}
-      rotation={[0.2, 0, 0]}
+      scale={15}
+      position={[0, -3, 0]}
+      rotation={[0.3, -0.5, 0]}
     />
   );
 }
@@ -51,7 +51,7 @@ export default function Book() {
       <div className="w-full h-full">
         <Canvas
           camera={{
-            position: [0, 2, 12],
+            position: [0, 1, 10],
             fov: 50,
             near: 0.1,
             far: 1000,
@@ -75,8 +75,8 @@ export default function Book() {
           <OrbitControls
             enableZoom={true}
             enablePan={false}
-            minDistance={8}
-            maxDistance={18}
+            minDistance={6}
+            maxDistance={15}
             minPolarAngle={Math.PI / 6}
             maxPolarAngle={Math.PI / 2}
             autoRotate={false}
