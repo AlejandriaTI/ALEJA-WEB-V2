@@ -20,7 +20,7 @@ export const articles: Article[] = [
     category: ["FASTPANEL", "SERVIDORES", "HOSTING"],
     image: "/fastpanel-server-control-panel.jpg",
     imageAlt: "FastPanel server control panel",
-    author: "DigitalComvenia Team",
+    author: "Alejandria Team",
     readTime: "8 min de lectura",
     excerpt:
       "Descubre cómo FastPanel puede simplificar la gestión de tus servidores.",
@@ -54,7 +54,7 @@ export const articles: Article[] = [
     category: ["WORDPRESS", "BLOG", "FRONTEND"],
     image: "/wordpress-blog-setup.jpg",
     imageAlt: "WordPress blog setup",
-    author: "DigitalComvenia Team",
+    author: "Alejandria Team",
     readTime: "12 min de lectura",
     excerpt:
       "Aprende a crear un blog con WordPress. Incluye imágenes, columnas, listas y tablas en WordPress.",
@@ -93,7 +93,7 @@ export const articles: Article[] = [
     category: ["ASTRO", "WEB DEVELOPMENT", "TUTORIAL"],
     image: "/astro-web-development.jpg",
     imageAlt: "Astro framework tutorial",
-    author: "DigitalComvenia Team",
+    author: "Alejandria Team",
     readTime: "10 min de lectura",
     excerpt:
       "Una guía detallada sobre cómo empezar con Astro y crear sitios web modernos.",
