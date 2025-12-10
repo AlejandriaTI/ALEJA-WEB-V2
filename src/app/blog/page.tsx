@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import HeroCard from "@/components/blog/hero-card";
 import ArticleGrid from "@/components/blog/article-grid";
 import { articles } from "@/data/blog-articles";
+import { BlogHeader } from "@/components/blog/blog-header";
 
 const filters = [
   { label: "All", count: null },
@@ -28,16 +29,11 @@ export default function BlogPage() {
   });
 
   return (
-    <main className="min-h-screen bg-background mt-12">
+    <main className="min-h-screen bg-background mt-14">
       <div className="container mx-auto px-4 py-12">
         {/* Heading Section */}
         <div className="mb-12">
-          <h1 className="text-5xl font-bold text-foreground mb-3">
-            Browse Our Resources
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            We provide tips and resources from industry leaders. For real.
-          </p>
+          <BlogHeader />
         </div>
 
         {/* Hero Card */}
