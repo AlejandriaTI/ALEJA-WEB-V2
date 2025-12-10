@@ -111,14 +111,14 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center flex-1 ml-8">
+            <div className="hidden xl:flex items-center flex-1 ml-4">
               <NavigationMenu viewport={false}>
                 <NavigationMenuList className="gap-1">
                   {navigationItems.map((item) =>
                     item.trigger ? (
                       <NavigationMenuItem key={item.label}>
                         <NavigationMenuTrigger
-                          className={`text-sm font-medium transition-colors bg-transparent hover:bg-primary/10 focus:bg-primary/10 focus:text-primary ${
+                          className={`text-sm font-medium transition-colors bg-transparent hover:bg-primary/10 focus:bg-primary/10 focus:text-primary whitespace-nowrap ${
                             theme === "light"
                               ? "text-gray-900 hover:text-primary"
                               : "text-white hover:text-primary"
@@ -157,7 +157,7 @@ export function Navbar() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={item.href || "#"}
-                            className={`px-4 py-2 text-sm font-medium transition-colors rounded-md hover:bg-primary/10 ${
+                            className={`px-4 py-2 text-sm font-medium transition-colors rounded-md hover:bg-primary/10 whitespace-nowrap ${
                               theme === "light"
                                 ? "text-gray-900 hover:text-primary"
                                 : "text-white hover:text-primary"
@@ -177,7 +177,7 @@ export function Navbar() {
             <div className="flex gap-3 items-center ml-auto">
               <button
                 aria-label="Abrir whatsapp"
-                className={`hidden lg:flex w-[190px] gap-2 border rounded-xl py-2 px-4 font-semibold text-[15px] leading-tight items-center justify-center transition-all ${
+                className={`hidden xl:flex gap-2 border rounded-xl py-2 px-5 font-semibold text-[15px] leading-tight items-center justify-center transition-all ${
                   theme === "light"
                     ? "border-gray-300 text-gray-700 hover:bg-primary/10 hover:text-primary"
                     : "border-[#26263F] text-[#B4C6D1] hover:bg-primary/10 hover:text-white"
@@ -194,7 +194,7 @@ export function Navbar() {
 
               <button
                 aria-label="Abrir intranet"
-                className={`hidden lg:flex w-[190px] gap-2 border rounded-xl items-center py-2 px-4 font-semibold text-[15px] transition-all justify-center ${
+                className={`hidden xl:flex gap-2 border rounded-xl items-center py-2 px-5 font-semibold text-[15px] transition-all justify-center ${
                   theme === "light"
                     ? "border-gray-300 text-gray-700 hover:bg-primary/10 hover:border-primary/50"
                     : "border-[#26263F] text-white hover:bg-primary/10 hover:border-primary/50"
@@ -227,7 +227,7 @@ export function Navbar() {
               variant="ghost"
               size="sm"
               aria-label="Abrir menú de navegación"
-              className={`lg:hidden p-2 transition-colors ${
+              className={`xl:hidden p-2 transition-colors ${
                 theme === "light"
                   ? "text-gray-900 hover:bg-primary/10"
                   : "text-white hover:bg-primary/10"
@@ -242,7 +242,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 xl:hidden transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >

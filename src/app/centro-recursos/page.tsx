@@ -5,7 +5,7 @@ import FeaturesSection from "@/components/centro-recursos/features-section";
 
 export default function Home() {
   return (
-    <main className=" min-h-screen">
+    <main className=" min-h-screen mt-12">
       <HeroSection />
       <BooksGallery />
       <FeaturesSection />
