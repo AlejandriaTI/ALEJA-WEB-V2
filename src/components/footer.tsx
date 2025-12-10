@@ -4,11 +4,17 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useHasMounted } from "@/hooks/use-has-mounted";
 
 export function Footer() {
   const { theme, resolvedTheme } = useTheme();
-
-  const currentTheme = theme === "system" ? resolvedTheme : theme;
+  const year = new Date().getFullYear();
+  const hasMounted = useHasMounted();
+  const currentTheme = hasMounted
+    ? theme === "system"
+      ? resolvedTheme
+      : theme
+    : undefined;
   return (
     <footer className="text-secondary-foreground/80 py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -124,9 +130,8 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-secondary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-secondary-foreground/60">
-            <p>
-              © {new Date().getFullYear()} Alejandría Consultora. Todos los
-              derechos reservados.
+            <p suppressHydrationWarning>
+              © {year} Alejandría Consultora. Todos los derechos reservados.
             </p>
             <div className="flex gap-6">
               <Link href="#" className="hover:text-primary transition-colors">

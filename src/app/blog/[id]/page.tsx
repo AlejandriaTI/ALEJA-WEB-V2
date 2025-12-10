@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft } from "lucide-react";
+import { Share2, Bookmark, ChevronLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { getArticleById } from "@/data/blog-articles";
 import { ArticleContent } from "@/components/blog/article-content";
 
@@ -14,20 +16,21 @@ export default async function ArticlePage({
 
   if (!article) {
     return (
-      <main className="min-h-screen mt-12 bg-background">
-        <div className="max-w-4xl mx-auto px-4 py-12 text-center">
-          <h1 className="text-4xl font-bold mb-4">Artículo no disponible</h1>
-          <Link href="/blog" className="text-primary hover:underline">
-            Volver al blog
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center space-y-4">
+          <h1 className="text-2xl font-bold text-foreground">
+            Artículo no encontrado
+          </h1>
+          <Link href="/blog">
+            <Button>Volver al blog</Button>
           </Link>
         </div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="min-h-screen mt-18 bg-background">
-      {/* Header */}
+    <main className="min-h-screen bg-background mt-24">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Link
           href="/blog"
@@ -36,55 +39,89 @@ export default async function ArticlePage({
           <ChevronLeft className="w-4 h-4" />
           Volver al blog
         </Link>
-        <div className="flex gap-2 mb-4 flex-wrap">
-          {article.category.map((cat: string) => (
-            <span
-              key={cat}
-              className="text-xs font-semibold text-primary-foreground bg-primary px-3 py-1 rounded"
-            >
-              {cat}
-            </span>
-          ))}
-        </div>
-        <h1 className="text-4xl font-bold text-foreground mb-4 text-balance">
-          {article.title}
-        </h1>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <span>{article.author}</span>
-          <span>•</span>
-          <span>{article.date}</span>
-          <span>•</span>
-          <span>{article.readTime}</span>
-        </div>
       </div>
 
-      {/* Featured Image */}
-      <div className="flex justify-center items-center mx-auto relative h-96 w-1/2 overflow-hidden rounded-lg">
-        <Image
-          src={article.image || "/placeholder.svg"}
-          alt={article.imageAlt}
-          fill
-          className="object-cover rounded-lg"
-        />
-      </div>
+      {/* Article Content */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-3xl mx-auto">
+          {/* Image */}
+          <div className="relative rounded-lg overflow-hidden mb-8 h-64 md:h-96 w-full">
+            <Image
+              src={article.image || "/placeholder.svg"}
+              alt={article.imageAlt || article.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="mb-8 text-muted-foreground italic text-lg">
-          {article.excerpt}
-        </div>
+          {/* Header */}
+          <div className="mb-8">
+            <div className="flex gap-2 mb-4">
+              {article.category.map((cat) => (
+                <Badge key={cat} variant="secondary">
+                  {cat}
+                </Badge>
+              ))}
+            </div>
+            <h1 className="text-2xl md:text-4xl font-bold mb-6 text-foreground text-balance">
+              {article.title}
+            </h1>
 
-        <ArticleContent content={article.content} />
+            {/* Author and Date */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-border pb-6 gap-4">
+              <div className="flex items-center gap-4">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden bg-muted">
+                  <Image
+                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${article.author}`}
+                    alt={article.author}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">
+                    {article.author}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {article.date} · {article.readTime}
+                  </p>
+                </div>
+              </div>
 
-        {/* Share and back */}
-        <div className="mt-16 pt-8 border-t border-border">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
-          >
-            <ChevronLeft className="w-4 h-4" />
-            Volver a todos los artículos
-          </Link>
+              {/* Share and Bookmark */}
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2 bg-background"
+                >
+                  <Share2 className="w-4 h-4" />
+                  Compartir
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2 bg-background"
+                >
+                  <Bookmark className="w-4 h-4" />
+                  Guardar
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+            <ArticleContent content={article.content} />
+          </div>
+
+          {/* Related Articles CTA */}
+          <div className="border-t border-border pt-8 flex justify-center">
+            <Link href="/blog">
+              <Button size="lg">Ver más artículos</Button>
+            </Link>
+          </div>
         </div>
       </div>
     </main>
