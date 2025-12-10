@@ -1,4 +1,3 @@
-import { HeroSection } from "@/components/home/hero-section";
 import { HeroSection3D } from "@/components/home/hero-section-3d";
 import { AboutSection } from "@/components/home/about-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";

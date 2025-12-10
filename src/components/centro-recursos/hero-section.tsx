@@ -6,7 +6,7 @@ import Book from "../3D/book";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-background via-background to-secondary/20 pt-16 pb-20 md:pt-24 md:pb-32 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
+    <section className="relative overflow-hidden bg-linear-to-br from-background via-background to-secondary/20 pt-16 pb-20 md:pt-24 md:pb-32 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[100px] -z-10"></div>
