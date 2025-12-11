@@ -241,20 +241,28 @@ export default function ThesisPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mb-32">
+        <div className="text-center mb-20 md:mb-32 px-4">
           <h3
-            className={`font-extrabold text-3xl md:text-4xl mb-8 italic ${
-              isLight ? "text-gray-900" : "text-white"
-            }`}
+            className={`font-extrabold italic mb-6
+      text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+      leading-tight 
+      ${isLight ? "text-gray-900" : "text-white"}
+    `}
           >
             ¿Listo para llevar tu tesis al siguiente nivel?
           </h3>
+
           <Button
-            className={`font-extrabold text-lg px-12 py-6 rounded-full italic uppercase h-auto ${
-              isLight
-                ? "bg-amber-400 hover:bg-amber-500 text-gray-900"
-                : "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-[0_0_20px_rgba(251,191,36,0.2)]"
-            }`}
+            className={`
+              font-extrabold italic uppercase rounded-full h-auto
+              px-8 py-4 sm:px-12 sm:py-5 text-base sm:text-lg md:text-xl
+              w-fit mx-auto transition-all
+              ${
+                isLight
+                  ? "bg-amber-400 hover:bg-amber-500 text-gray-900"
+                  : "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-[0_0_20px_rgba(251,191,36,0.2)]"
+              }
+            `}
           >
             ¡Quiero empezar con mi tesis!
           </Button>
