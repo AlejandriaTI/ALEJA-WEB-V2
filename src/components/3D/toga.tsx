@@ -47,7 +47,7 @@ function TogaModel() {
   return (
     <group ref={group}>
       <Center>
-        <primitive object={scene} scale={2} />
+        <primitive object={scene} scale={1.5} />
       </Center>
     </group>
   );
