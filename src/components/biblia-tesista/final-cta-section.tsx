@@ -33,7 +33,7 @@ export function FinalCTASection() {
               </p>
             </div>
             <Image
-              src="/images/biblia-tesista/descpromo.png"
+              src="/images/biblia-tesista/descPromo.png"
               alt="Precio especial $9.99"
               width={150}
               height={150}

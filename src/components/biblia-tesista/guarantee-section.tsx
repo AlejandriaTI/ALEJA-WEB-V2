@@ -6,7 +6,7 @@ export function GuaranteeSection() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
           <Image
-            src="/images/biblia-tesista/garantiadorado.png"
+            src="/images/biblia-tesista/GarantiaDorado.png"
             alt="Garantía de 7 días"
             width={200}
             height={200}
