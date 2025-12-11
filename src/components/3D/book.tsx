@@ -27,20 +27,19 @@ function BookModel() {
 
   useFrame((_, delta) => {
     if (mixer.current) mixer.current.update(delta);
-
-    // Rotación oscilante suave
-    if (group.current) {
-      group.current.rotation.y = Math.sin(Date.now() * 0.0004) * 0.6;
-    }
+    // Manual rotation disabled to allow OrbitControls autoRotate
+    // if (group.current) {
+    //   group.current.rotation.y = Math.sin(Date.now() * 0.0004) * 0.6;
+    // }
   });
 
   return (
     <primitive
       ref={group}
       object={scene}
-      scale={15}
-      position={[0, -3, 0]}
-      rotation={[0.3, -0.5, 0]}
+      scale={18}
+      position={[0, -2.5, 0]}
+      rotation={[0.1, 0, 0]}
     />
   );
 }
@@ -75,11 +74,12 @@ export default function Book() {
           <OrbitControls
             enableZoom={true}
             enablePan={false}
-            minDistance={6}
-            maxDistance={15}
+            minDistance={4}
+            maxDistance={20}
             minPolarAngle={Math.PI / 6}
             maxPolarAngle={Math.PI / 2}
-            autoRotate={false}
+            autoRotate={true}
+            autoRotateSpeed={1.5}
           />
         </Canvas>
       </div>

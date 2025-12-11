@@ -1,7 +1,6 @@
 "use client";
 
 import { MapPin, Phone, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 export function ContactSection() {
@@ -53,8 +52,8 @@ export function ContactSection() {
             Ponte en contacto con nosotros
           </h3>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Estamos disponibles para resolver tus dudas y ayudarte en tu camino
-            académico
+            Estamos disponibles para resolver tus dudas y acompañarte en tu
+            camino académico.
           </p>
         </div>
 
@@ -62,30 +61,26 @@ export function ContactSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {contactInfo.map((item, idx) => {
             const Icon = item.icon;
+
             return (
               <Card
                 key={idx}
-                className="bg-card border-border hover:border-primary hover:shadow-lg transition-all group"
+                className="bg-card border-border hover:border-primary/40 hover:shadow-md transition-all"
               >
-                <div className="p-6 space-y-4 h-full flex flex-col">
-                  <div className="bg-primary/10 rounded-lg p-3 w-fit group-hover:bg-primary transition-colors">
-                    <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                <div className="p-6 space-y-4 h-full flex flex-col items-center text-center">
+                  <div className="bg-primary/10 rounded-lg p-3 w-fit">
+                    <Icon className="w-7 h-7 text-primary" />
                   </div>
+
                   <div className="flex-1">
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
+                    <p className="text-base font-semibold text-muted-foreground mb-1">
                       {item.label}
                     </p>
-                    <p className="font-semibold text-foreground text-sm">
+
+                    <p className="font-semibold text-foreground text-lg leading-tight">
                       {item.value}
                     </p>
                   </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full border-primary/20 text-primary hover:bg-primary/10 bg-transparent"
-                  >
-                    Contactar
-                  </Button>
                 </div>
               </Card>
             );

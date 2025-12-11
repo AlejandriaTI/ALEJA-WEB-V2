@@ -39,7 +39,6 @@ function PicktureBookModel() {
 export default function ReadingBook() {
   return (
     <Canvas camera={{ position: [0, 2, 5], fov: 50 }}>
-      {/* 💡 ILUMINACIÓN NEUTRA (colores reales del modelo) */}
       <ambientLight intensity={0.7} color="#ffffff" />
       <directionalLight position={[5, 5, 5]} intensity={1.5} color="#ffffff" />
       <hemisphereLight intensity={0.4} color="#ffffff" groundColor="#ffffff" />
