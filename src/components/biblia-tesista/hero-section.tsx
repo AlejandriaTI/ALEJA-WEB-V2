@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CountdownTimer } from "./countdown-timer";
+import { motion } from "framer-motion";
 
 declare global {
   interface Window {
@@ -29,31 +30,52 @@ export function HeroSection() {
   };
 
   return (
-    <section className=" text-foreground">
+    <section className="text-foreground overflow-hidden">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <Badge
-            variant="secondary"
-            className="bg-primary/20 text-primary border-primary/30"
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            +5000 aprobados en 11 años
-          </Badge>
+            <Badge
+              variant="secondary"
+              className="bg-primary/20 text-primary border-primary/30"
+            >
+              +5000 aprobados en 11 años
+            </Badge>
+          </motion.div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance"
+          >
             La <span className="text-primary">claridad</span> que necesitas para
             avanzar con tu <span className="text-primary">tesis</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+          >
             📌{" "}
             <span className="font-semibold">
               Mira este video hasta el final
             </span>{" "}
             y descubre los recursos que ofrecemos para ayudarte en tu tesis
-          </p>
+          </motion.p>
         </div>
 
-        <div className="max-w-4xl mx-auto mt-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="max-w-4xl mx-auto mt-12"
+        >
           <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl shadow-primary/10">
             <iframe
               className="absolute inset-0 w-full h-full"
@@ -64,16 +86,24 @@ export function HeroSection() {
               allowFullScreen
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="max-w-lg mx-auto mt-12 space-y-8 text-center">
-          <Button
-            onClick={handleCheckout}
-            size="lg"
-            className="w-full md:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-12 py-6 rounded-full"
-          >
-            ACCEDE A LA OFERTA AHORA
-          </Button>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="max-w-lg mx-auto mt-12 space-y-8 text-center"
+        >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              onClick={handleCheckout}
+              size="lg"
+              className="w-full md:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-12 py-6 rounded-full shadow-lg hover:shadow-amber-500/20"
+            >
+              ACCEDE A LA OFERTA AHORA
+            </Button>
+          </motion.div>
 
           <CountdownTimer />
 
@@ -81,7 +111,7 @@ export function HeroSection() {
             No sabía por dónde empezar. Con la Biblia del Tesista avancé más en
             una semana que en tres meses. — Camila R.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

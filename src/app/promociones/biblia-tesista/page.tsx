@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import { BonusSection } from "@/components/biblia-tesista/bonus-section";
 import { GuaranteeSection } from "@/components/biblia-tesista/guarantee-section";
 import { FinalCTASection } from "@/components/biblia-tesista/final-cta-section";
@@ -10,7 +12,12 @@ import { TestimonialsSection } from "@/components/biblia-tesista/testimonials-se
 
 export default function BibliaTesista() {
   return (
-    <main className="min-h-screen bg-background mt-12">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-background mt-12"
+    >
       <HeroSection />
       <ProductSection />
       <BenefitsSection />
@@ -18,6 +25,6 @@ export default function BibliaTesista() {
       <BonusSection />
       <GuaranteeSection />
       <FinalCTASection />
-    </main>
+    </motion.main>
   );
 }
