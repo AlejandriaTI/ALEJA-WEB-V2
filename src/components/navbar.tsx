@@ -128,12 +128,13 @@ export function Navbar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <div
-                            className={`w-48 p-2 space-y-1 rounded-md shadow-2xl border ${
+                            className={`w-48 space-y-1 rounded-md bg-transparent shadow-none
+                            ${
                               currentTheme === "light"
-                                ? "bg-white border-gray-200 text-gray-700"
+                                ? "border-gray-200 text-gray-700"
                                 : currentTheme === "dark"
-                                ? "bg-[#0E0E16] border-gray-800 text-gray-300"
-                                : "bg-[#1C1C34] border-[#2A2A4A] text-[#B4C6D1]"
+                                ? "border-gray-800 text-gray-300"
+                                : "border-[#2A2A4A] text-[#B4C6D1]"
                             }`}
                           >
                             {item.subItems?.map((subItem) => (
