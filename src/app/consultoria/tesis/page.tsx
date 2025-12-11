@@ -149,24 +149,33 @@ export default function ThesisPage() {
               { icon: Trophy, label: "Multiplicar tus ingresos" },
               { icon: Brain, label: "Reducir el estrés" },
               { icon: Users, label: "Reforzar tu autoridad" },
-            ].map((item, i) => (
-              <motion.div key={i} variants={itemVariants}>
-                <Card className={`p-6 text-center transition `}>
-                  <item.icon
-                    className={`w-12 h-12 mx-auto mb-4 ${
-                      isLight ? "text-primary" : "text-[#0CB2D5]"
-                    }`}
-                  />
-                  <p
-                    className={`font-semibold text-sm italic ${
-                      isLight ? "text-gray-900" : "text-white"
-                    }`}
-                  >
-                    {item.label}
-                  </p>
-                </Card>
-              </motion.div>
-            ))}
+            ].map((item, i) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div key={i} variants={itemVariants}>
+                  <Card className="p-6 text-center transition flex flex-col items-center h-48 md:h-44 justify-between">
+                    {/* CONTENEDOR IGUALADO */}
+                    <div className="w-20 h-20 flex items-center justify-center mb-4">
+                      <Icon
+                        strokeWidth={1.5} // ← NORMALIZA EL GROSOR
+                        className={`w-12 h-12 scale-110
+                        ${isLight ? "text-primary" : "text-[#0CB2D5]"}
+                      `}
+                      />
+                    </div>
+
+                    <p
+                      className={`font-semibold text-sm italic ${
+                        isLight ? "text-gray-900" : "text-white"
+                      }`}
+                    >
+                      {item.label}
+                    </p>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
 
