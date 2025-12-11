@@ -82,7 +82,7 @@ export function Navbar() {
             ? "bg-white/95 border-gray-200 backdrop-blur-lg"
             : theme === "dark"
             ? "bg-black/95 border-gray-800 backdrop-blur-lg"
-            : "bg-[#121221]/80 border-[#26263F] backdrop-blur-lg"
+            : "bg-slate-900/90 border-slate-800 backdrop-blur-lg"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -134,7 +134,7 @@ export function Navbar() {
                                 ? "border-gray-200 text-gray-700"
                                 : currentTheme === "dark"
                                 ? "border-gray-800 text-gray-300"
-                                : "border-[#2A2A4A] text-[#B4C6D1]"
+                                : "border-slate-800 text-slate-300"
                             }`}
                           >
                             {item.subItems?.map((subItem) => (
@@ -264,13 +264,13 @@ export function Navbar() {
               ? "bg-white border-gray-200"
               : currentTheme === "dark"
               ? "bg-black border-gray-800"
-              : "bg-[#1C1C34] border-[#2A2A4A]"
+              : "bg-slate-900 border-slate-800"
           }`}
         >
           {/* Close button */}
           <div
             className={`shrink-0 flex items-center justify-between p-4 border-b ${
-              currentTheme === "light" ? "border-gray-200" : "border-[#2A2A4A]"
+              currentTheme === "light" ? "border-gray-200" : "border-slate-800"
             }`}
           >
             {currentTheme === "light" ? (
@@ -315,7 +315,7 @@ export function Navbar() {
                     className={`w-full text-left px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center justify-between ${
                       currentTheme === "light"
                         ? "text-gray-900 hover:bg-gray-100"
-                        : "text-white hover:bg-[#2A2A4A]"
+                        : "text-white hover:bg-slate-800"
                     }`}
                   >
                     <span>{item.label}</span>
@@ -378,7 +378,7 @@ export function Navbar() {
                 ? "bg-white border-gray-200"
                 : currentTheme === "dark"
                 ? "bg-black border-gray-800"
-                : "bg-[#1C1C34] border-[#2A2A4A]"
+                : "bg-slate-900 border-slate-800"
             }`}
           >
             <button

@@ -209,7 +209,6 @@ export default function ThesisPage() {
                 </div>
               ))}
             </div>
-
             <div className="flex items-center justify-center">
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <div
