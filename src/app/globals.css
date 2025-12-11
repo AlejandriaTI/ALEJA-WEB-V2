@@ -46,74 +46,74 @@
 :root {
   --radius: 0.625rem;
 
-  /* Default Theme = Dark Navy */
-  --background: #1C1C34;
+  /* Default Theme = Navy (Slate 900) */
+  --background: #0f172a;
   --foreground: #ffffff;
-  --card: #232345;
+  --card: #1e293b;
   --card-foreground: #ffffff;
-  --popover: #1C1C34;
+  --popover: #0f172a;
   --popover-foreground: #ffffff;
   --primary: #068EAD;
   --primary-foreground: #ffffff;
-  --secondary: #2A2A4A;
+  --secondary: #334155;
   --secondary-foreground: #ffffff;
-  --muted: #2A2A4A;
+  --muted: #334155;
   --muted-foreground: #94a3b8;
-  --accent: #2A2A4A;
+  --accent: #334155;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #2A2A4A;
-  --input: #2A2A4A;
+  --border: #334155;
+  --input: #334155;
   --ring: #0CB2D5;
   --chart-1: #0CB2D5;
-  --chart-2: #2A2A4A;
-  --chart-3: #1C1C34;
+  --chart-2: #334155;
+  --chart-3: #0f172a;
   --chart-4: #94a3b8;
   --chart-5: #ffffff;
-  --sidebar: #1C1C34;
+  --sidebar: #0f172a;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #0CB2D5;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2A2A4A;
+  --sidebar-accent: #334155;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #2A2A4A;
+  --sidebar-border: #334155;
   --sidebar-ring: #0CB2D5;
 }
 
 /* Navy Theme (Sistema/Por defecto) */
 .navy {
-  --background: #1C1C34;
+  --background: #0f172a;
   --foreground: #ffffff;
-  --card: #232345;
+  --card: #0c0f1436;
   --card-foreground: #ffffff;
-  --popover: #1C1C34;
+  --popover: #0f172a;
   --popover-foreground: #ffffff;
   --primary: #068EAD;
   --primary-foreground: #ffffff;
-  --secondary: #2A2A4A;
+  --secondary: #334155;
   --secondary-foreground: #ffffff;
-  --muted: #2A2A4A;
+  --muted: #334155;
   --muted-foreground: #94a3b8;
-  --accent: #2A2A4A;
+  --accent: #334155;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #2A2A4A;
-  --input: #2A2A4A;
+  --border: #334155;
+  --input: #334155;
   --ring: #0CB2D5;
   --chart-1: #0CB2D5;
-  --chart-2: #2A2A4A;
-  --chart-3: #1C1C34;
+  --chart-2: #334155;
+  --chart-3: #0f172a;
   --chart-4: #94a3b8;
   --chart-5: #ffffff;
-  --sidebar: #1C1C34;
+  --sidebar: #0f172a;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #0CB2D5;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2A2A4A;
+  --sidebar-accent: #334155;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #2A2A4A;
+  --sidebar-border: #334155;
   --sidebar-ring: #0CB2D5;
 }
 
