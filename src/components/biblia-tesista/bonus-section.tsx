@@ -40,7 +40,7 @@ export function BonusSection() {
               <CardContent className="p-6 flex items-start gap-4">
                 <div className="shrink-0">
                   <Image
-                    src="/images/biblia-tesista/regalodorado.png"
+                    src="/images/biblia-tesista/RegaloDorado.png"
                     alt="Regalo"
                     width={40}
                     height={40}
