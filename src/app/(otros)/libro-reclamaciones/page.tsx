@@ -1,6 +1,6 @@
 "use client";
 
-import type React from "react";
+import React from "react";
 
 import { useState } from "react";
 import {
@@ -22,7 +22,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { AlertCircle, CheckCircle2, FileText, Loader2 } from "lucide-react";
+import {
+  AlertCircle,
+  CheckCircle2,
+  ChevronDownIcon,
+  FileText,
+  Loader2,
+} from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
 
 export default function LibroReclamaciones() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,6 +42,8 @@ export default function LibroReclamaciones() {
     "idle" | "success" | "error"
   >("idle");
 
+  const [open, setOpen] = React.useState(false);
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
   const [values, setValues] = useState({
     nombres: "",
     apellidos: "",
@@ -317,17 +331,50 @@ export default function LibroReclamaciones() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-2 flex flex-col">
                     <Label htmlFor="fecha_reclamo">Fecha *</Label>
-                    <Input
-                      id="fecha_reclamo"
-                      type="date"
-                      required
-                      value={values.fecha_reclamo}
-                      onChange={(e) =>
-                        handleChange("fecha_reclamo", e.target.value)
-                      }
-                    />
+                    <Popover open={open} onOpenChange={setOpen}>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          id="fecha_reclamo"
+                          className={`w-full justify-between font-normal ${
+                            !date && "text-muted-foreground"
+                          }`}
+                        >
+                          {date ? (
+                            date.toLocaleDateString("es-ES", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })
+                          ) : (
+                            <span>Seleccionar fecha</span>
+                          )}
+                          <ChevronDownIcon className="h-4 w-4 opacity-50" />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={date}
+                          onSelect={(newDate) => {
+                            setDate(newDate);
+                            if (newDate) {
+                              handleChange(
+                                "fecha_reclamo",
+                                newDate.toISOString().split("T")[0]
+                              );
+                            }
+                            setOpen(false);
+                          }}
+                          initialFocus
+                          captionLayout="dropdown"
+                          fromYear={2020}
+                          toYear={new Date().getFullYear()}
+                        />
+                      </PopoverContent>
+                    </Popover>
                   </div>
                 </div>
 
