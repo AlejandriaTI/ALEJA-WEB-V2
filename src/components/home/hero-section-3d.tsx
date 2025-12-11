@@ -5,6 +5,7 @@ import { Users, Award, TrendingUp } from "lucide-react";
 import { useTheme } from "next-themes";
 import Toga from "../3D/toga";
 import { useHasMounted } from "@/hooks/use-has-mounted";
+import { NumberTicker } from "../ui/number-ticker";
 
 export function HeroSection3D() {
   const { theme, resolvedTheme } = useTheme();
@@ -114,12 +115,22 @@ export function HeroSection3D() {
                     }`}
                   />
                   <p
-                    className={`text-lg md:text-xl lg:text-2xl font-bold ${
-                      isLight ? "text-gray-900" : "text-white"
-                    }`}
+                    className={`text-lg md:text-xl lg:text-2xl font-bold flex items-center justify-center gap-1`}
                   >
-                    {stat.number}
+                    {stat.number.includes("+") && (
+                      <span
+                        className={isLight ? "text-primary" : "text-[#0CB2D5]"}
+                      >
+                        +
+                      </span>
+                    )}
+
+                    <NumberTicker
+                      value={Number(stat.number.replace(/[^0-9]/g, ""))}
+                      className={isLight ? "text-primary" : "text-[#0CB2D5]"}
+                    />
                   </p>
+
                   <p
                     className={`text-xs md:text-xs lg:text-sm ${
                       isLight ? "text-gray-500" : "text-slate-400"

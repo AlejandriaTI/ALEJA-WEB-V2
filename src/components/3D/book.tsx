@@ -39,7 +39,7 @@ function BookModel() {
       object={scene}
       scale={18}
       position={[0, -2.5, 0]}
-      rotation={[0.1, 0, 0]}
+      rotation={[0, -2, 0]}
     />
   );
 }
@@ -50,8 +50,8 @@ export default function Book() {
       <div className="w-full h-full">
         <Canvas
           camera={{
-            position: [0, 1, 10],
-            fov: 50,
+            position: [0, 4, 12],
+            fov: 45,
             near: 0.1,
             far: 1000,
           }}
@@ -59,15 +59,18 @@ export default function Book() {
           style={{ display: "block", width: "100%", height: "100%" }}
         >
           {/* Iluminación optimizada */}
-          <ambientLight intensity={1} />
-          <directionalLight position={[5, 5, 5]} intensity={1.4} castShadow />
-          <directionalLight position={[-5, 3, -5]} intensity={0.7} />
+          <ambientLight intensity={1.5} />
+          <directionalLight
+            position={[10, 10, 10]}
+            intensity={1.8}
+            castShadow
+          />
+          <directionalLight position={[-5, 5, -5]} intensity={1} />
           <hemisphereLight
-            intensity={0.6}
+            intensity={1}
             color="#ffffff"
             groundColor="#b0b0b0"
           />
-          <pointLight position={[0, 5, 0]} intensity={0.5} />
 
           <BookModel />
 
@@ -78,8 +81,8 @@ export default function Book() {
             maxDistance={20}
             minPolarAngle={Math.PI / 6}
             maxPolarAngle={Math.PI / 2}
-            autoRotate={true}
-            autoRotateSpeed={1.5}
+            autoRotate={false}
+            autoRotateSpeed={0.5}
           />
         </Canvas>
       </div>

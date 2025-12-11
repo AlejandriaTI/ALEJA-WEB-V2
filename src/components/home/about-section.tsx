@@ -1,5 +1,7 @@
 "use client";
 
+import { NumberTicker } from "../ui/number-ticker";
+
 export function AboutSection() {
   return (
     <section id="about" className="py-20 md:py-32 bg-background">
@@ -28,14 +30,19 @@ export function AboutSection() {
                 { number: "+1500", label: "Casos de éxito" },
                 { number: "+10", label: "Años" },
                 { number: "+20", label: "Empresas" },
-                { number: "100%", label: "Satisfacción" },
+                { number: "100", label: "Satisfacción" },
               ].map((stat) => (
                 <div
                   key={stat.label}
                   className="bg-card rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-border"
                 >
                   <p className="text-3xl font-bold text-primary mb-2">
-                    {stat.number}
+                    {stat.number.includes("+") && "+"}
+                    <NumberTicker
+                      value={Number(stat.number.replace(/[^0-9]/g, ""))}
+                      className="text-primary"
+                    />
+                    {stat.label === "Satisfacción" && "%"}
                   </p>
                   <p className="text-muted-foreground text-sm">{stat.label}</p>
                 </div>

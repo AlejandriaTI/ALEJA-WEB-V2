@@ -49,15 +49,20 @@ export function Footer() {
               )}
             </ul>
           </div>
-          {/* Explorar */}
+          {/* Promociones */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Explorar</h4>
+            <h4 className="font-semibold text-foreground">Promociones</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Precios
-                </Link>
-              </li>
+              {["Promociones", "La biblia del tesista"].map((item) => (
+                <li key={item}>
+                  <Link
+                    href="#"
+                    className="hover:text-primary transition-colors"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
