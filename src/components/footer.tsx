@@ -135,7 +135,7 @@ export function Footer() {
             )}
           </Link>
           {/* Libro de reclamaciones */}
-          <div>
+          <Link href="/libro-reclamaciones">
             <Image
               src="/libro_reclamaciones.png"
               width={140}
@@ -143,7 +143,7 @@ export function Footer() {
               alt="Libro de reclamaciones"
               className={`mx-auto ${currentTheme === "light" ? "invert" : ""}`}
             />
-          </div>
+          </Link>
 
           {/* Redes sociales */}
           <div className="flex items-center gap-6 text-foreground">
@@ -172,10 +172,16 @@ export function Footer() {
           </p>
 
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link
+              href="/politicas-privacidad"
+              className="hover:text-primary transition-colors"
+            >
               Política de privacidad
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link
+              href="/terminos-y-condiciones"
+              className="hover:text-primary transition-colors"
+            >
               Términos y condiciones
             </Link>
           </div>
