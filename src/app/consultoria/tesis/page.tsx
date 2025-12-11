@@ -244,10 +244,10 @@ export default function ThesisPage() {
         <div className="text-center mb-20 md:mb-32 px-4">
           <h3
             className={`font-extrabold italic mb-6
-      text-2xl sm:text-3xl md:text-4xl lg:text-5xl
-      leading-tight 
-      ${isLight ? "text-gray-900" : "text-white"}
-    `}
+            text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+            leading-tight 
+            ${isLight ? "text-gray-900" : "text-white"}
+          `}
           >
             ¿Listo para llevar tu tesis al siguiente nivel?
           </h3>
