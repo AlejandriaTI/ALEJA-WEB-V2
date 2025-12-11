@@ -37,9 +37,9 @@ export default function TerminosPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-16 md:pt-20">
       {/* Header */}
-      <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-card/50 backdrop-blur-sm sticky top-16 md:top-20 z-30">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary/10 rounded-lg">
@@ -61,7 +61,7 @@ export default function TerminosPage() {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar Navigation */}
           <aside className="lg:col-span-1">
-            <Card className="sticky top-24">
+            <Card className="sticky top-24 lg:top-[220px]">
               <CardHeader>
                 <CardTitle className="text-lg">Navegación</CardTitle>
               </CardHeader>
@@ -101,11 +101,15 @@ export default function TerminosPage() {
                   <div className="flex-1">
                     <p className="text-lg leading-relaxed text-pretty">
                       Bienvenido a{" "}
-                      <strong className="text-primary">Decygo</strong>, una
-                      plataforma digital diseñada para ofrecer herramientas y
-                      recursos en línea dirigidos a emprendedores, profesionales
-                      y empresas que buscan optimizar sus procesos y potenciar
-                      su presencia digital.
+                      <strong className="text-primary">
+                        Alejandría Consultores
+                      </strong>
+                      , un equipo especializado en brindar asesoría académica,
+                      acompañamiento metodológico, desarrollo de investigaciones
+                      y soluciones formativas orientadas a estudiantes,
+                      profesionales, instituciones educativas y organizaciones
+                      que buscan elevar la calidad de sus proyectos académicos y
+                      científicos.
                     </p>
                     <p className="mt-4 text-muted-foreground leading-relaxed">
                       Antes de utilizar nuestros servicios, es fundamental que
@@ -120,7 +124,7 @@ export default function TerminosPage() {
             </Card>
 
             {/* Section 1: Introducción y Definiciones */}
-            <section id="introduccion">
+            <section id="introduccion" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -140,9 +144,10 @@ export default function TerminosPage() {
                         Plataforma
                       </h4>
                       <p className="text-sm leading-relaxed">
-                        Hace referencia a Decygo, incluyendo su sitio web y
-                        cualquier otra aplicación o canal digital que utilicemos
-                        para prestar nuestros servicios.
+                        Hace referencia al portal web, sistemas internos y
+                        cualquier aplicación digital que utilice Alejandría
+                        Consultores para ofrecer sus servicios o gestionar la
+                        relación con sus clientes.
                       </p>
                     </div>
 
@@ -151,10 +156,11 @@ export default function TerminosPage() {
                         Usuario
                       </h4>
                       <p className="text-sm leading-relaxed">
-                        Persona natural o jurídica que accede a la plataforma,
-                        ya sea para explorar, registrarse, adquirir productos
-                        digitales o hacer uso de cualquier otro servicio
-                        ofrecido.
+                        Toda persona natural o jurídica que accede a nuestros
+                        servicios, ya sea para solicitar asesoría, recibir
+                        orientación académica, adquirir productos digitales, o
+                        utilizar herramientas de apoyo brindadas por nuestro
+                        equipo.
                       </p>
                     </div>
 
@@ -163,10 +169,10 @@ export default function TerminosPage() {
                         Servicios
                       </h4>
                       <p className="text-sm leading-relaxed">
-                        Se refiere a los productos digitales, herramientas y
-                        recursos disponibles en Decygo, los cuales pueden
-                        incluir guías, plantillas, cursos, softwares, entre
-                        otros.
+                        Incluyen asesorías personalizadas, desarrollo guiado de
+                        investigaciones, revisión metodológica, capacitación,
+                        elaboración de materiales académicos, programas
+                        formativos y recursos digitales.
                       </p>
                     </div>
 
@@ -175,9 +181,9 @@ export default function TerminosPage() {
                         Contenido
                       </h4>
                       <p className="text-sm leading-relaxed">
-                        Incluye todos los textos, imágenes, gráficos, logotipos,
-                        videos y cualquier otro material que se encuentra
-                        disponible en la plataforma.
+                        Todo material publicado por Alejandría Consultores,
+                        incluyendo textos, documentos, artículos, plantillas,
+                        imágenes, videos, presentaciones, entre otros.
                       </p>
                     </div>
 
@@ -186,9 +192,9 @@ export default function TerminosPage() {
                         Proveedor de Servicios de Pago
                       </h4>
                       <p className="text-sm leading-relaxed">
-                        Empresas externas que facilitan el procesamiento de
-                        pagos en la plataforma, tales como pasarelas de pago,
-                        bancos u otros intermediarios financieros.
+                        Empresas o plataformas externas que permiten procesar
+                        pagos, gestionar comunicaciones o facilitar herramientas
+                        digitales complementarias.
                       </p>
                     </div>
                   </div>
@@ -197,7 +203,7 @@ export default function TerminosPage() {
             </section>
 
             {/* Section 2: Aceptación */}
-            <section id="aceptacion">
+            <section id="aceptacion" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -207,24 +213,22 @@ export default function TerminosPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="leading-relaxed">
-                    El uso de Decygo implica la aceptación plena de estos
-                    términos y condiciones. Si no estás de acuerdo con alguna de
-                    las cláusulas aquí establecidas, debes abstenerte de
-                    utilizar nuestros servicios.
+                    Al utilizar cualquier servicio de Alejandría Consultores, el
+                    usuario declara que conoce, entiende y acepta completamente
+                    estos Términos y Condiciones.
                   </p>
                   <p className="leading-relaxed">
-                    Al registrarte en nuestra plataforma, declaras y garantizas
-                    que tienes al menos 18 años de edad o, en caso de ser menor,
-                    que cuentas con la autorización expresa de tus padres o
-                    tutores legales para hacer uso de nuestros servicios.
+                    Si en algún momento el usuario no está de acuerdo con estas
+                    políticas, deberá abstenerse de continuar con el uso de
+                    nuestros servicios.
                   </p>
                   <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg">
                     <p className="text-sm leading-relaxed">
-                      <strong>Importante:</strong> Nos reservamos el derecho de
-                      rechazar el acceso o cancelar la cuenta de cualquier
-                      usuario que incumpla estos términos o que realice
-                      actividades sospechosas o fraudulentas dentro de la
-                      plataforma.
+                      <strong>Importante:</strong> Alejandría Consultores se
+                      reserva el derecho de denegar o cancelar un servicio ante
+                      evidencias de fraude académico, suplantación,
+                      incumplimiento ético, o cualquier comportamiento que
+                      afecte la integridad profesional del equipo.
                     </p>
                   </div>
                 </CardContent>
@@ -232,7 +236,7 @@ export default function TerminosPage() {
             </section>
 
             {/* Section 3: Registro */}
-            <section id="registro">
+            <section id="registro" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -242,9 +246,9 @@ export default function TerminosPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="leading-relaxed">
-                    Para acceder a ciertos servicios de Decygo, es posible que
-                    necesites crear una cuenta de usuario. En este proceso, te
-                    comprometes a:
+                    Para acceder a determinados servicios (seguimiento, aula
+                    virtual, descargas personalizadas), el usuario podrá
+                    requerir una cuenta.
                   </p>
 
                   <ul className="space-y-3">
@@ -271,17 +275,16 @@ export default function TerminosPage() {
                   </ul>
 
                   <p className="leading-relaxed text-muted-foreground">
-                    Nos reservamos el derecho de suspender o eliminar cuentas en
-                    caso de detectar fraudes, suplantación de identidad,
-                    incumplimientos de estos términos o cualquier actividad que
-                    pueda perjudicar el funcionamiento de la plataforma.
+                    Alejandría Consultores puede suspender cuentas que presenten
+                    uso indebido o violaciones éticas vinculadas al ámbito
+                    académico.
                   </p>
                 </CardContent>
               </Card>
             </section>
 
             {/* Section 4: Privacidad */}
-            <section id="privacidad">
+            <section id="privacidad" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -295,8 +298,9 @@ export default function TerminosPage() {
                       4.1. Información que Recopilamos
                     </h4>
                     <p className="leading-relaxed mb-4">
-                      Cuando utilizas Decygo, podemos recopilar la siguiente
-                      información:
+                      Alejandría Consultores recopila únicamente la información
+                      necesaria para brindar un servicio eficiente, seguro y
+                      personalizado.
                     </p>
 
                     <div className="grid gap-3">
@@ -310,17 +314,15 @@ export default function TerminosPage() {
                       </div>
                       <div className="p-3 bg-muted/30 rounded-lg">
                         <strong className="text-primary">Datos de pago:</strong>{" "}
-                        Información financiera necesaria para procesar
-                        transacciones, administrada exclusivamente por nuestros
-                        proveedores de pago.
+                        procesados exclusivamente por pasarelas seguras como
+                        Mercado Pago, Yape, Plin u otros aliados.
                       </div>
                       <div className="p-3 bg-muted/30 rounded-lg">
                         <strong className="text-primary">
                           Datos de navegación:
                         </strong>{" "}
-                        Información sobre el uso de la plataforma, incluyendo
-                        direcciones IP, tipo de navegador, páginas visitadas y
-                        tiempo de sesión.
+                        interacción en la plataforma, historial de consulta,
+                        preferencias.
                       </div>
                     </div>
                   </div>
@@ -339,21 +341,19 @@ export default function TerminosPage() {
                       <li className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-accent rounded-full mt-2 shrink-0"></div>
                         <span>
-                          Procesar transacciones y brindar acceso a los
-                          productos digitales.
+                          Gestionar solicitudes y servicios contratados.
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-accent rounded-full mt-2 shrink-0"></div>
                         <span>
-                          Mejorar la experiencia del usuario en la plataforma.
+                          Brindar acompañamiento académico personalizado.{" "}
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-accent rounded-full mt-2 shrink-0"></div>
                         <span>
-                          Comunicarnos contigo en relación con soporte,
-                          actualizaciones o promociones.
+                          Emitir reportes, facturación y comprobantes.
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
@@ -370,27 +370,26 @@ export default function TerminosPage() {
 
                   <div>
                     <h4 className="font-semibold text-lg mb-3">
-                      4.5. Derechos del Usuario
+                      4.3. Derechos del Usuario
                     </h4>
                     <p className="leading-relaxed mb-4">
-                      Como usuario de Decygo, tienes derecho a:
+                      Como usuario de Alejandría Consultores, tienes derecho a:
                     </p>
 
                     <div className="grid gap-3">
                       <div className="p-3 bg-primary/5 border border-primary/20 rounded-lg">
                         <span className="leading-relaxed">
-                          Acceder, modificar o eliminar tu información personal.
+                          Solicitar actualización o eliminación de sus datos.{" "}
                         </span>
                       </div>
                       <div className="p-3 bg-primary/5 border border-primary/20 rounded-lg">
                         <span className="leading-relaxed">
-                          Solicitar que dejemos de enviarte comunicaciones
-                          promocionales.
+                          Pedir información sobre el uso de su información.
                         </span>
                       </div>
                       <div className="p-3 bg-primary/5 border border-primary/20 rounded-lg">
                         <span className="leading-relaxed">
-                          Retirar tu consentimiento para el tratamiento de
+                          Retirar su consentimiento para el tratamiento de
                           datos, siempre que esto no afecte la prestación del
                           servicio.
                         </span>
@@ -399,7 +398,7 @@ export default function TerminosPage() {
 
                     <p className="mt-4 text-sm text-muted-foreground">
                       Puedes ejercer estos derechos enviándonos una solicitud a{" "}
-                      <strong>correo@decygo.com</strong>
+                      <strong>correo@alejandraconsultores.com</strong>
                     </p>
                   </div>
                 </CardContent>
@@ -407,7 +406,7 @@ export default function TerminosPage() {
             </section>
 
             {/* Section 5: Pagos */}
-            <section id="pagos">
+            <section id="pagos" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -417,9 +416,10 @@ export default function TerminosPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="leading-relaxed">
-                    Los precios de los productos y servicios ofrecidos en Decygo
-                    están claramente especificados en la plataforma y pueden
-                    estar sujetos a modificaciones sin previo aviso.
+                    Los precios de los servicios y productos ofertados por
+                    Alejandría Consultores son informados previamente y pueden
+                    variar según complejidad, tiempos de entrega y modalidad de
+                    trabajo.
                   </p>
 
                   <div>
@@ -432,9 +432,8 @@ export default function TerminosPage() {
                           1
                         </div>
                         <span className="leading-relaxed">
-                          Una vez seleccionado el producto o servicio, el
-                          usuario debe proceder con el pago a través de los
-                          métodos habilitados en la plataforma.
+                          El usuario selecciona el servicio o paquete de
+                          asesoría.
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
@@ -452,9 +451,8 @@ export default function TerminosPage() {
                           3
                         </div>
                         <span className="leading-relaxed">
-                          Una vez confirmado el pago, se otorgará acceso
-                          inmediato al producto digital adquirido o, en su
-                          defecto, se enviará por correo electrónico.
+                          Una vez confirmado el pago, se habilita el acceso al
+                          servicio o se inicia el trabajo acordado.
                         </span>
                       </li>
                     </ul>
@@ -465,11 +463,11 @@ export default function TerminosPage() {
                       5.2. Política de Reembolsos
                     </h4>
                     <p className="text-sm leading-relaxed">
-                      Dado que los productos ofrecidos en Decygo son digitales e
-                      intangibles, no se aceptan reembolsos una vez realizada la
-                      compra. Sin embargo, en casos excepcionales, el usuario
-                      podrá presentar una solicitud de revisión a través de
-                      nuestro soporte.
+                      Dado que los servicios brindados son de naturaleza
+                      intelectual y personalizada, no se aceptan reembolsos una
+                      vez iniciada la prestación. En casos excepcionales, el
+                      usuario podrá solicitar una revisión formal del caso.(lo
+                      veremos)
                     </p>
                   </div>
                 </CardContent>
@@ -477,7 +475,7 @@ export default function TerminosPage() {
             </section>
 
             {/* Section 6: Legislación */}
-            <section id="legislacion">
+            <section id="legislacion" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -488,8 +486,8 @@ export default function TerminosPage() {
                 <CardContent>
                   <p className="leading-relaxed">
                     Estos términos y condiciones se rigen por las leyes de{" "}
-                    <strong>Perú</strong>. Cualquier disputa que surja en
-                    relación con Decygo será resuelta ante los tribunales de{" "}
+                    <strong>Perú</strong>. y cualquier controversia será
+                    atendida ante los tribunales competentes de{" "}
                     <strong>Lima, Perú</strong>.
                   </p>
                 </CardContent>
@@ -497,7 +495,7 @@ export default function TerminosPage() {
             </section>
 
             {/* Section 7: Modificaciones */}
-            <section id="modificaciones">
+            <section id="modificaciones" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -507,18 +505,16 @@ export default function TerminosPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="leading-relaxed">
-                    Nos reservamos el derecho de modificar estos términos y
-                    políticas de privacidad en cualquier momento. Las
-                    actualizaciones entrarán en vigor desde el momento en que
-                    sean publicadas en la plataforma. Es responsabilidad del
-                    usuario revisar periódicamente este documento.
+                    Alejandría Consultores podrá actualizar estos términos en
+                    cualquier momento. Las modificaciones serán publicadas en la
+                    página oficial y entrarán en vigor inmediatamente.
                   </p>
                 </CardContent>
               </Card>
             </section>
 
             {/* Section 8: Contacto */}
-            <section id="contacto">
+            <section id="contacto" className="scroll-mt-40">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
