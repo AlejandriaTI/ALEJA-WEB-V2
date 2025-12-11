@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState(() => {
@@ -33,11 +34,17 @@ export function CountdownTimer() {
   const seconds = timeLeft % 60;
 
   return (
-    <div className="flex justify-center gap-4 md:gap-8">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex justify-center gap-4 md:gap-8"
+    >
       <TimeUnit value={hours} label="Horas" />
       <TimeUnit value={minutes} label="Minutos" />
       <TimeUnit value={seconds} label="Segundos" />
-    </div>
+    </motion.div>
   );
 }
 
@@ -45,8 +52,19 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
       <div className="bg-secondary/50 border border-border rounded-lg px-4 py-3 md:px-6 md:py-4 min-w-[60px] md:min-w-[80px]">
-        <span className="text-2xl md:text-4xl font-bold font-mono">
-          {String(value).padStart(2, "0")}
+        <span className="text-2xl md:text-4xl font-bold font-mono min-w-[1.5em] text-center block">
+          <AnimatePresence mode="popLayout">
+            <motion.span
+              key={value}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="block"
+            >
+              {String(value).padStart(2, "0")}
+            </motion.span>
+          </AnimatePresence>
         </span>
       </div>
       <span className="text-xs md:text-sm text-muted-foreground mt-2">
