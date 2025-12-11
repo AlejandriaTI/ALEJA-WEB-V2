@@ -10,7 +10,7 @@ import { TestimonialsSection } from "@/components/biblia-tesista/testimonials-se
 
 export default function BibliaTesista() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background mt-12">
       <HeroSection />
       <ProductSection />
       <BenefitsSection />
