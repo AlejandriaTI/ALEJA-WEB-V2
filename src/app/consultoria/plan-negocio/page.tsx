@@ -15,16 +15,18 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useHasMounted } from "@/hooks/use-has-mounted";
 
 export default function BusinessPlanPage() {
   const { theme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const hasMounted = useHasMounted();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isLight = mounted && (theme === "light" || resolvedTheme === "light");
+  const currentTheme = hasMounted
+    ? theme === "system"
+      ? resolvedTheme
+      : theme
+    : undefined;
+  const isLight = currentTheme === "light";
 
   const containerVariants = {
     hidden: { opacity: 0 },
