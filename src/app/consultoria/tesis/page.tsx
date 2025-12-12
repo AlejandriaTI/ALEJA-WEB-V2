@@ -85,20 +85,13 @@ export default function ThesisPage() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="mt-10 flex justify-center gap-4"
           >
-            <button
-              className={`px-8 py-3 font-semibold rounded-xl shadow-lg transition bg-[#0CB2D5] hover:bg-[#0aa1c0] text-black shadow-[#0CB2D5]/20`}
-            >
+            <Button className="px-8 py-3 rounded-full font-semibold bg-[#0CB2D5] text-white shadow-md shadow-[#0CB2D5]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#0CB2D5]/50 hover:-translate-y-px active:translate-y-0">
               Comenzar ahora
-            </button>
-            <button
-              className={`px-8 py-3 border rounded-xl transition ${
-                isLight
-                  ? "border-gray-300 text-gray-700 hover:bg-gray-100"
-                  : "border-white/10 text-white hover:bg-white/5"
-              }`}
-            >
+            </Button>
+
+            <Button className="px-8 py-3 rounded-full font-medium border border-[#0CB2D5] text-[#0CB2D5] bg-transparent transition-all duration-300 hover:bg-[#0CB2D5]/10">
               Ver servicios
-            </button>
+            </Button>
           </motion.div>
         </div>
       </section>
