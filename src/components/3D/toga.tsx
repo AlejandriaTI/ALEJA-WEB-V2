@@ -12,14 +12,6 @@ function TogaModel() {
   const { scene } = gltf;
 
   useEffect(() => {
-    console.log("Modelo cargado:", gltf);
-    console.log("Scene:", scene);
-
-    // Calcular el bounding box para ver el tamaño del modelo
-    const box = new THREE.Box3().setFromObject(scene);
-    const size = box.getSize(new THREE.Vector3());
-    console.log("Tamaño del modelo:", size);
-
     // Asegurar que todos los materiales sean visibles
     scene.traverse((child) => {
       if ((child as THREE.Mesh).isMesh) {
