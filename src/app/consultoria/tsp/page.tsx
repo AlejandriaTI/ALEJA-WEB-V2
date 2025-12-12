@@ -1,16 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
-  Briefcase,
-  Clock,
-  Award,
-  TrendingUp,
-  FileText,
-  CheckCircle2,
-  Star,
-  Zap,
-} from "lucide-react";
+import { Briefcase, Award, CheckCircle2, Star, Zap } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
