@@ -97,5 +97,4 @@ export default function Toga() {
   );
 }
 
-// Precargar el modelo
 useGLTF.preload("/3D/toga.glb");
