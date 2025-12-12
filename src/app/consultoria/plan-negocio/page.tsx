@@ -7,13 +7,11 @@ import {
   Target,
   PieChart,
   DollarSign,
-  CheckCircle2,
   Star,
   Presentation,
 } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useHasMounted } from "@/hooks/use-has-mounted";
 
