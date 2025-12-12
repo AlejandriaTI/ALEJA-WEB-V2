@@ -18,6 +18,12 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+} from "@/components/ui/hover-card";
+import Image from "next/image";
 
 export default function Nosotros() {
   const valores = [
@@ -321,9 +327,65 @@ export default function Nosotros() {
               {
                 icon: Shield,
                 title: "Confidencialidad Total",
-                description:
-                  "Tu información y proyecto están protegidos con los más altos estándares de seguridad.",
+                description: (
+                  <>
+                    Tu información y proyecto están protegidos con los más altos
+                    estándares de seguridad mediante nuestro{" "}
+                    <HoverCard openDelay={200}>
+                      <HoverCardTrigger asChild>
+                        <a
+                          href="https://intranet.alejandriaconsultora.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 font-medium hover:underline cursor-pointer"
+                        >
+                          sistema de intranet institucional
+                        </a>
+                      </HoverCardTrigger>
+
+                      <HoverCardContent
+                        side="top"
+                        align="center"
+                        className="w-72 p-4 space-y-3 rounded-2xl bg-[rgb(var(--hovercard-bg)/0.95)] text-[rgb(var(--hovercard-text))] border border-[rgb(var(--hovercard-border)/0.35)] backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+                      >
+                        {/* Header */}
+                        <div className="flex items-center gap-2">
+                          <Shield className="w-5 h-5 text-cyan-400" />
+                          <h3 className="text-sm font-semibold">
+                            Intranet Alejandría
+                          </h3>
+                        </div>
+
+                        {/* Image Preview */}
+                        <div className="relative overflow-hidden rounded-xl border">
+                          <Image
+                            src="/images/intranet/intranet.png"
+                            width={320}
+                            height={180}
+                            alt="Vista del sistema de intranet Alejandría Consultora"
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          Plataforma privada para la gestión segura de
+                          proyectos, entregables y control de accesos
+                          académicos.
+                        </p>
+
+                        {/* Badge */}
+                        <span className="inline-block text-[11px] px-2 py-1 rounded-full bg-cyan-400/10 text-cyan-400">
+                          Acceso seguro • Datos protegidos
+                        </span>
+                      </HoverCardContent>
+                    </HoverCard>
+                    .
+                  </>
+                ),
               },
+
               {
                 icon: CheckCircle2,
                 title: "Soporte Continuo",

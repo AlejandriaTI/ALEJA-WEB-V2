@@ -42,6 +42,28 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
+:root {
+  --hovercard-bg: 255 255 255;
+  --hovercard-border: 14 165 233; /* cyan-500 */
+  --hovercard-text: 15 23 42;
+}
+.dark {
+  /* Gris carbón neutro, flota sobre negro sin verse azulado */
+  --hovercard-bg: #000000;        /* ≈ zinc-800 / neutral dark */
+
+  /* Borde cian apagado (acento, no protagonista) */
+  --hovercard-border: 94 234 212;  /* teal-300 */
+
+  /* Texto gris claro natural (cómodo para leer) */
+  --hovercard-text: 228 228 231;   /* zinc-200 */
+}
+
+
+.navy {
+  --hovercard-bg: 11 31 51;      /* más claro que el fondo navy */
+  --hovercard-border: 56 189 248;
+  --hovercard-text: 226 232 240;
+}
 
 :root {
   --radius: 0.625rem;
