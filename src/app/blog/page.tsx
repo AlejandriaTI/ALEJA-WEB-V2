@@ -9,10 +9,10 @@ import { BlogHeader } from "@/components/blog/blog-header";
 
 const filters = [
   { label: "All", count: null },
-  { label: "HOSTING", count: null },
-  { label: "WORDPRESS", count: null },
-  { label: "ASTRO", count: null },
-  { label: "TUTORIAL", count: null },
+  { label: "GRADOS Y TÍTULOS", count: null },
+  { label: "CIENCIA", count: null },
+  { label: "EMPRENDIMIENTO", count: null },
+  { label: "TECNOLOGÍA", count: null },
 ];
 
 export default function BlogPage() {
