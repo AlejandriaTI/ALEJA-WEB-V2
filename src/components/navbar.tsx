@@ -35,37 +35,40 @@ export function Navbar() {
 
   const navigationItems = [
     {
-      label: "Consultoria",
-      trigger: true,
-      subItems: [
-        { label: "Tesis", href: "/consultoria/tesis" },
-        { label: "TSP", href: "/consultoria/tsp" },
-        {
-          label: "Articulo Cientifico",
-          href: "/consultoria/articulo-cientifico",
-        },
-        { label: "Plan de Negocio", href: "/consultoria/plan-negocio" },
-      ],
-    },
-    {
       label: "Nosotros",
       href: "/nosotros",
     },
     {
-      label: "Promociones",
+      label: "Servicios",
       trigger: true,
       subItems: [
-        { label: "Promociones", href: "/promociones" },
-        { label: "La biblia del tesista", href: "/promociones/biblia-tesista" },
+        { label: "Tesis", href: "/servicios/tesis" },
+        { label: "TSP", href: "/servicios/tsp" },
+        {
+          label: "Articulo Cientifico",
+          href: "/servicios/articulo-cientifico",
+        },
+        { label: "Plan de Negocio", href: "/servicios/plan-negocio" },
+        { label: "Comunidad", href: "/servicios/comunidad" },
+      ],
+    },
+
+    {
+      label: "Planes",
+      href: "/planes",
+    },
+    {
+      label: "Medios",
+      trigger: true,
+      subItems: [
+        { label: "Videos", href: "/medios/videos" },
+        { label: "Blog", href: "/medios/blog" },
+        { label: "Catalogos", href: "/medios/catalogos" },
       ],
     },
     {
-      label: "Centro de Recursos",
-      href: "/centro-recursos",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
+      label: "Postulacion",
+      href: "/postulacion",
     },
   ];
 

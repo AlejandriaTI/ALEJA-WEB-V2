@@ -40,7 +40,7 @@ const plans: Array<{
 }> = [
   {
     title: "Titulo",
-    name: "Bronce",
+    name: "Basico",
     key: "start",
     icon: Medal,
     priceOld: "S/ 3,290",
@@ -63,7 +63,7 @@ const plans: Array<{
   },
   {
     title: "Titulo",
-    name: "Plata",
+    name: "Intermedio",
     key: "power",
     icon: Award,
     priceOld: "S/ 3,950",
@@ -90,7 +90,7 @@ const plans: Array<{
   },
   {
     title: "Titulo",
-    name: "Oro",
+    name: "Avanzado",
     key: "max",
     icon: Trophy,
     priceOld: "S/ 5,490",
@@ -115,7 +115,7 @@ const plans: Array<{
   },
   {
     title: "Maestria",
-    name: "Bronce",
+    name: "Basico",
     key: "start",
     icon: Medal,
     priceOld: "S/ 4,490",
@@ -138,7 +138,7 @@ const plans: Array<{
   },
   {
     title: "Maestria",
-    name: "Plata",
+    name: "Intermedio",
     key: "power",
     icon: Award,
     priceOld: "S/ 5,190",
@@ -165,7 +165,7 @@ const plans: Array<{
   },
   {
     title: "Maestria",
-    name: "Oro",
+    name: "Avanzado",
     key: "max",
     icon: Trophy,
     priceOld: "S/ 5,790",

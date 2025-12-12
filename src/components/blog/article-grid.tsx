@@ -14,7 +14,7 @@ export default function ArticleGrid({ articles }: ArticleGridProps) {
       {articles.map((article) => (
         <Link
           key={article.id}
-          href={`/blog/${article.id}`}
+          href={`/medios/blog/${article.id}`}
           className="block h-full"
         >
           <Card className="max-w-md h-full hover:shadow-lg transition-shadow duration-300">

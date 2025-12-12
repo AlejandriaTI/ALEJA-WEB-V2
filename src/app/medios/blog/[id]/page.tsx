@@ -33,7 +33,7 @@ export default async function ArticlePage({
     <main className="min-h-screen bg-background mt-24">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Link
-          href="/blog"
+          href="/medios/blog"
           className="inline-flex items-center gap-2 text-primary hover:underline mb-6"
         >
           <ChevronLeft className="w-4 h-4" />
