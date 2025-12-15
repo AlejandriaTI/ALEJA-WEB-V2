@@ -8,7 +8,7 @@ export default function VideoHeroCard() {
   const featuredVideo = videos[0]
 
   return (
-    <Link href={`/videos/${featuredVideo.id}`}>
+    <Link href={`/medios/videos/${featuredVideo.slug}`}>
       <div className="relative group overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300">
         <div className="grid md:grid-cols-2 gap-6 p-6">
           {/* Thumbnail */}

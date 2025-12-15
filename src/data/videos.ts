@@ -1,5 +1,6 @@
 export interface Video {
   id: string;
+  slug: string;
   title: string;
   description: string;
   thumbnail: string;
@@ -20,6 +21,7 @@ export interface Video {
 export const videos: Video[] = [
   {
     id: "1",
+    slug: "inteligencia-artificial-en-la-educacion-superior",
     title: "Inteligencia Artificial en la Educación Superior",
     description:
       "Análisis del impacto de las herramientas de IA en el aprendizaje universitario y la transformación educativa.",
@@ -48,6 +50,7 @@ export const videos: Video[] = [
   },
   {
     id: "2",
+    slug: "metodologias-agiles-en-desarrollo-de-software",
     title: "Metodologías Ágiles en Desarrollo de Software",
     description:
       "Estudio comparativo de Scrum, Kanban y XP en proyectos de desarrollo de software empresarial.",
@@ -76,6 +79,7 @@ export const videos: Video[] = [
   },
   {
     id: "3",
+    slug: "cambio-climatico-y-sostenibilidad-urbana",
     title: "Cambio Climático y Sostenibilidad Urbana",
     description:
       "Investigación sobre estrategias de adaptación climática en ciudades latinoamericanas.",
@@ -104,6 +108,7 @@ export const videos: Video[] = [
   },
   {
     id: "4",
+    slug: "blockchain-transparencia-cadenas-suministro",
     title: "Blockchain y Transparencia en Cadenas de Suministro",
     description:
       "Implementación de tecnología blockchain para mejorar la trazabilidad en la industria alimentaria.",
@@ -132,6 +137,7 @@ export const videos: Video[] = [
   },
   {
     id: "5",
+    slug: "neurociencia-aprendizaje-entornos-digitales",
     title: "Neurociencia del Aprendizaje en Entornos Digitales",
     description:
       "Estudio sobre cómo el cerebro procesa información en ambientes de aprendizaje virtual.",
@@ -160,6 +166,7 @@ export const videos: Video[] = [
   },
   {
     id: "6",
+    slug: "innovacion-modelos-negocio-circular",
     title: "Innovación en Modelos de Negocio Circular",
     description:
       "Análisis de empresas que implementan principios de economía circular con éxito.",
@@ -190,4 +197,8 @@ export const videos: Video[] = [
 
 export function getVideoById(id: string): Video | undefined {
   return videos.find((video) => video.id === id);
+}
+
+export function getVideoBySlug(slug: string): Video | undefined {
+  return videos.find((video) => video.slug === slug);
 }

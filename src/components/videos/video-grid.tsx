@@ -12,7 +12,7 @@ export default function VideoGrid({ videos }: VideoGridProps) {
   return (
     <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {videos.map((video) => (
-        <Link key={video.id} href={`/videos/${video.id}`}>
+        <Link key={video.id} href={`/medios/videos/${video.slug}`}>
           <div className="group overflow-hidden rounded-lg border border-border bg-card hover:border-primary/50 transition-all duration-300 h-full flex flex-col">
             {/* Thumbnail */}
             <div className="relative aspect-video overflow-hidden bg-muted">
