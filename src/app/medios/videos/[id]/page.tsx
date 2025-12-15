@@ -30,7 +30,7 @@ export default async function VideoDetailPage({
 
   return (
     <main className="min-h-screen bg-background py-12">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-4 mt-12 py-8">
         <Link
           href="/medios/videos"
           className="inline-flex items-center gap-2 text-primary hover:underline mb-6"
