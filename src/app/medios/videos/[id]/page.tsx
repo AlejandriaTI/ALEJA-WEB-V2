@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Share2, Bookmark, ChevronLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -87,6 +88,14 @@ export default async function VideoDetailPage({
             {/* Metadata and Actions */}
             <div className="flex flex-col lg:flex-row lg:items-center justify-between border-y border-border py-6 gap-4">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden bg-muted">
+                  <Image
+                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${video.author}`}
+                    alt={video.author}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div>
                   <p className="font-semibold text-foreground">
                     {video.author}
