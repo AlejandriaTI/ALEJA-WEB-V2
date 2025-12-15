@@ -29,7 +29,7 @@ export default function VideosPage() {
   });
 
   return (
-    <main className="min-h-screen bg-background py-12">
+    <main className="min-h-screen bg-background py-12 mt-12">
       <div className="container mx-auto px-4">
         {/* Heading Section */}
         <div className="mb-12">
