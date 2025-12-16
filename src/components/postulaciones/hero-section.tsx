@@ -59,6 +59,8 @@ export function HeroSection() {
           <Image
             src="/agile-software-development-team-meeting.jpg"
             alt="Equipo trabajando"
+            width={1200}
+            height={500}
             className="rounded-2xl shadow-2xl mx-auto border border-border/50"
           />
         </div>
