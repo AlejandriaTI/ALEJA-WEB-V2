@@ -57,7 +57,7 @@ export function HeroSection() {
         {/* Decorative image placeholder */}
         <div className="mt-16 relative">
           <img
-            src="/diverse-team-collaboration.png"
+            src="/agile-software-development-team-meeting.jpg"
             alt="Equipo trabajando"
             className="rounded-2xl shadow-2xl mx-auto border border-border/50"
           />
