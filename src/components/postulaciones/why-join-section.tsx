@@ -60,7 +60,7 @@ export function WhyJoinSection() {
           </div>
 
           {/* CTA Box */}
-          <Card className="p-10 text-center space-y-6 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-primary/20">
+          <Card className="p-10 text-center space-y-6 bg-linear-to-br from-primary/10 via-primary/5 to-transparent border-primary/20">
             <div className="space-y-3">
               <h3 className="text-3xl font-bold text-foreground">Forma parte de algo grande</h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">

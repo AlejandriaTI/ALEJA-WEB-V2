@@ -259,8 +259,15 @@ export function ApplicationForm() {
                       htmlFor="terms"
                       className="text-sm font-normal leading-relaxed cursor-pointer"
                     >
-                      Acepto el tratamiento de mis datos personales de acuerdo
-                      con la política de privacidad y los términos de uso *
+                      Acepto los{" "}
+                      <a
+                        href="/politicas-privacidad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        Términos y Políticas de Privacidad
+                      </a>
                     </Label>
                   </div>
                 </div>
