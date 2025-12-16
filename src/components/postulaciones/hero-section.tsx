@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
-
+import Image from "next/image"
 export function HeroSection() {
   const scrollToForm = () => {
     document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth" })
@@ -56,7 +56,7 @@ export function HeroSection() {
 
         {/* Decorative image placeholder */}
         <div className="mt-16 relative">
-          <img
+          <Image
             src="/agile-software-development-team-meeting.jpg"
             alt="Equipo trabajando"
             className="rounded-2xl shadow-2xl mx-auto border border-border/50"
