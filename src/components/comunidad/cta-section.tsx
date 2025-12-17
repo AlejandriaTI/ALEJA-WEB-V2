@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Send } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function CTASection() {
   const handleWhatsApp = () => {
@@ -17,7 +18,13 @@ export default function CTASection() {
   return (
     <section className="py-12 md:py-20 bg-linear-to-br from-primary/5 via-background to-secondary/10">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="bg-card border border-border/50 rounded-2xl p-12 md:p-16 text-center space-y-8">
+        <motion.div
+          className="bg-card border border-border/50 rounded-2xl p-12 md:p-16 text-center space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">
               ¿Listo para unirte a la comunidad?
@@ -61,7 +68,7 @@ export default function CTASection() {
               <p className="text-sm text-foreground/60">Instituciones</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

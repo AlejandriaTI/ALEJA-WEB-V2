@@ -114,7 +114,7 @@ export default function MembersShowcase() {
           className="grid md:grid-cols-2 gap-8 lg:gap-12"
         >
           {testimonials.map((testimonial, idx) => (
-            <motion.div key={idx} variants={itemVariants}>
+            <motion.div key={idx} variants={itemVariants} whileHover={{ scale: 1.02 }}>
               <Card
                 className={`rounded-xl border p-6 shadow-xl transition-all group h-full ${
                   isLight

@@ -53,7 +53,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Promociones</h4>
             <ul className="space-y-2 text-sm">
-              {["Promociones", "La biblia del tesista"].map((item) => (
+              {["Planes", "Catalogos"].map((item) => (
                 <li key={item}>
                   <Link
                     href="#"
@@ -70,7 +70,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-foreground font-semibold">Empresa</h4>
             <ul className="space-y-2 text-sm">
-              {["Nosotros", "Blog", "Contacto", "Recursos"].map((item) => (
+              {["Nosotros", "Blog", "Contacto", "Videos"].map((item) => (
                 <li key={item}>
                   <Link
                     href="#"
