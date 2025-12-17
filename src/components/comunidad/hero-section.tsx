@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2, Users } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function HeroSection() {
   return (
@@ -12,7 +13,13 @@ export default function HeroSection() {
 
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="space-y-6">
               <div className="inline-block">
                 <span className="text-primary text-sm font-semibold uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
@@ -61,12 +68,22 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="hidden md:flex items-center justify-center relative">
-            <div className="relative w-full h-[500px] flex items-center justify-center">
+            <motion.div
+              className="relative w-full h-[500px] flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
               {/* Decorative circles representing community */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center"
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+              >
                 <div className="relative w-72 h-72">
                   {/* Center circle */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-primary/30 flex items-center justify-center backdrop-blur-sm border-2 border-primary/50">
@@ -90,8 +107,8 @@ export default function HeroSection() {
                     )
                   })}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>

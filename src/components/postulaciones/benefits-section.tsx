@@ -1,5 +1,8 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { Briefcase, TrendingUp, Clock, BookOpen, Users, Globe } from "lucide-react"
+import { motion } from "framer-motion"
 
 const benefits = [
   {
@@ -52,16 +55,17 @@ export function BenefitsSection() {
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon
               return (
-                <Card
-                  key={index}
-                  className="p-6 space-y-4 bg-background/50 backdrop-blur border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all group"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground">{benefit.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-                </Card>
+                <motion.div key={index} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5, delay: index * 0.06 }}>
+                  <Card
+                    className="p-6 space-y-4 bg-background/50 backdrop-blur border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all group"
+                  >
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">{benefit.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                  </Card>
+                </motion.div>
               )
             })}
           </div>

@@ -4,6 +4,7 @@ import type React from "react";
 
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -52,8 +53,9 @@ export function ApplicationForm() {
           </div>
 
           {/* Form */}
-          <Card className="p-8 bg-background/50 backdrop-blur border-border/50">
-            <form onSubmit={handleSubmit} className="space-y-8">
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6 }}>
+            <Card className="p-8 bg-background/50 backdrop-blur border-border/50">
+              <form onSubmit={handleSubmit} className="space-y-8">
               {/* Personal Data */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground border-b border-border pb-2">
@@ -274,23 +276,26 @@ export function ApplicationForm() {
               </div>
 
               {/* Submit Button */}
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full text-lg bg-primary hover:bg-primary/90 text-primary-foreground"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>Enviando...</>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5 mr-2" />
-                    Enviar postulación
-                  </>
-                )}
-              </Button>
+              <motion.div whileTap={{ scale: 0.98 }}>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full text-lg bg-primary hover:bg-primary/90 text-primary-foreground"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>Enviando...</>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Enviar postulación
+                    </>
+                  )}
+                </Button>
+              </motion.div>
             </form>
           </Card>
+          </motion.div>
         </div>
       </div>
       <Toaster />
