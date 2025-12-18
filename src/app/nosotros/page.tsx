@@ -26,12 +26,7 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
-import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from "@/components/ui/hover-card";
-import Image from "next/image";
+
 
 export default function Nosotros() {
   const valores = [
