@@ -356,6 +356,7 @@ export default function ThesisPage() {
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-12">
+            {/* Columna izquierda */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -366,57 +367,46 @@ export default function ThesisPage() {
               {[
                 {
                   num: "01",
-                  title: "Propuesta de temas",
-                  desc: "Los temas son personalizados y acordes a tu problema de investigación.",
+                  title: "Evaluación y propuesta de tema",
                 },
                 {
                   num: "03",
-                  title: "Corrección ilimitada",
-                  desc: "Revisión continua hasta cumplir con todas las observaciones.",
+                  title: "Acompañamiento constante",
                 },
                 {
                   num: "05",
-                  title: "Sesión personalizada",
-                  desc: "Adaptada a tus necesidades para que comprendas cada detalle del proceso.",
+                  title: "Control de calidad y entrega de reporte Turnitin",
                 },
               ].map((item, i) => (
-                <Card key={i} className={`p-6 transition `}>
+                <Card key={i} className="p-6">
                   <div className="flex items-start gap-4 mb-4">
-                    <div
-                      className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 border ${
-                        isLight
-                          ? "bg-primary/10 border-primary/20"
-                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20 group-hover:bg-[#0CB2D5]/20 transition-colors"
-                      }`}
-                    >
-                      <BookOpen
-                        className={`w-8 h-8 ${
-                          isLight ? "text-primary" : "text-[#0CB2D5]"
-                        }`}
-                      />
-                    </div>
                     <p
-                      className={`text-4xl font-bold opacity-50 ${
+                      className={`text-4xl font-bold ${
                         isLight ? "text-primary" : "text-[#0CB2D5]"
                       }`}
                     >
                       {item.num}
                     </p>
                   </div>
+
                   <h3
-                    className={`font-bold text-xl mb-2 ${
+                    className={`font-bold text-sm uppercase tracking-wide ${
                       isLight ? "text-gray-900" : "text-white"
                     }`}
                   >
                     {item.title}
                   </h3>
-                  <p className={isLight ? "text-gray-600" : "text-slate-400"}>
-                    {item.desc}
-                  </p>
+
+                  <div
+                    className={`h-[3px] w-24 mt-3 ${
+                      isLight ? "bg-primary" : "bg-[#0CB2D5]"
+                    }`}
+                  />
                 </Card>
               ))}
             </motion.div>
 
+            {/* Columna derecha */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -427,53 +417,41 @@ export default function ThesisPage() {
               {[
                 {
                   num: "02",
-                  title: "Análisis inicial",
-                  desc: "Evaluamos tu necesidad y diseñamos una estrategia personalizada.",
+                  title: "Elaboración del trabajo de investigación",
                 },
                 {
                   num: "04",
-                  title: "Desarrollo académico",
-                  desc: "Seguimiento paso a paso de tu investigación y redacción.",
+                  title: "Levantamiento de observaciones",
                 },
                 {
                   num: "06",
-                  title: "Publicación final",
-                  desc: "Preparación completa para la presentación y defensa de tu tesis.",
+                  title: "Empoderamiento para la sustentación",
                 },
               ].map((item, i) => (
-                <Card key={i} className={`p-6 transition md:mt-24`}>
+                <Card key={i} className="p-6 md:mt-24">
                   <div className="flex items-start gap-4 mb-4">
                     <p
-                      className={`text-4xl font-bold opacity-50 ${
+                      className={`text-4xl font-bold ${
                         isLight ? "text-primary" : "text-[#0CB2D5]"
                       }`}
                     >
                       {item.num}
                     </p>
-                    <div
-                      className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 border ${
-                        isLight
-                          ? "bg-primary/10 border-primary/20"
-                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20 group-hover:bg-[#0CB2D5]/20 transition-colors"
-                      }`}
-                    >
-                      <CheckCircle2
-                        className={`w-8 h-8 ${
-                          isLight ? "text-primary" : "text-[#0CB2D5]"
-                        }`}
-                      />
-                    </div>
                   </div>
+
                   <h3
-                    className={`font-bold text-xl mb-2 ${
+                    className={`font-bold text-sm uppercase tracking-wide ${
                       isLight ? "text-gray-900" : "text-white"
                     }`}
                   >
                     {item.title}
                   </h3>
-                  <p className={isLight ? "text-gray-600" : "text-slate-400"}>
-                    {item.desc}
-                  </p>
+
+                  <div
+                    className={`h-[3px] w-24 mt-3 ${
+                      isLight ? "bg-primary" : "bg-[#0CB2D5]"
+                    }`}
+                  />
                 </Card>
               ))}
             </motion.div>
