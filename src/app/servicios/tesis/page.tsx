@@ -62,9 +62,9 @@ export default function ThesisPage() {
               isLight ? "text-gray-900" : "text-white"
             }`}
           >
-            Impulsa tus proyectos con
+            Impulsa tu tesis con nuestro
             <br />
-            <span className="text-[#0CB2D5]">innovación y excelencia</span>
+            <span className="text-[#0CB2D5]">acompañamiento de excelencia</span>
           </motion.h1>
 
           <motion.p
@@ -208,27 +208,23 @@ export default function ThesisPage() {
               {[
                 {
                   title: "Multiplica tus ingresos",
-                  desc: "al obtener un título o grado que te abrirá nuevas oportunidades.",
+                  desc: " al obtener el título o grado que abrirá puertas a nuevas oportunidades profesionales.",
                 },
                 {
-                  title: "Reduce el estrés",
-                  desc: "dejando que nuestros expertos se encarguen de cada aspecto de tu tesis.",
+                  title: "Despidete del estrés",
+                  desc: "dejando que nuestros expertos te acompañen paso a paso en cada parte de tu tesis.",
                 },
                 {
-                  title: "Libera tiempo valioso",
-                  desc: "para enfocarte en lo que realmente importa.",
+                  title: "Recupera tu tiempo",
+                  desc: " y dedícalo a lo que realmente importa: tu trabajo, tu familia y tus sueños.",
                 },
                 {
-                  title: "Refuerza tu marca personal",
-                  desc: "para que logres ser reconocido en tu área por tu equipo de trabajo.",
+                  title: "Impulsa tu marca personal",
+                  desc: "plogra que tu nombre sea sinónimo de éxito, respeto y crecimiento profesional.",
                 },
                 {
-                  title: "Logra satisfacción personal",
-                  desc: "al ver concretado tu plan de negocio, alcanzando un hito clave.",
-                },
-                {
-                  title: "Elimina la presión social",
-                  desc: "demostrando tu capacidad para culminar tus proyectos.",
+                  title: "Libérate de la presión ",
+                  desc: "demuestra que sí eres capaz de cerrar ciclos, cumplir objetivos y alcanzar lo que muchos solo postergan",
                 },
               ].map((item, i) => (
                 <motion.div
