@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   Target,
   Eye,
+  Scale,
   Heart,
   Users,
   Award,
@@ -13,10 +14,17 @@ import {
   Shield,
   Sparkles,
   GraduationCap,
-  BookOpen,
   TrendingUp,
+  LayoutDashboard,
+  Handshake,
+  Building2,
+  BadgeCheck,
+  HeartHandshake,
+  ClipboardCheck,
+  UserCheck,
   CheckCircle2,
 } from "lucide-react";
+
 import { motion } from "framer-motion";
 import {
   HoverCard,
@@ -29,27 +37,31 @@ export default function Nosotros() {
   const valores = [
     {
       icon: Shield,
-      title: "Integridad",
+      title: "Confidencialidad",
       description:
-        "Actuamos con honestidad y transparencia en cada proyecto que realizamos.",
+        "Protegemos la información de nuestros clientes con total responsabilidad y ética.",
     },
     {
-      icon: Award,
-      title: "Excelencia",
+      icon: Scale,
+      title: "Honestidad",
+      description: "Actuamos con integridad y transparencia en cada proyecto.",
+    },
+    {
+      icon: Heart,
+      title: "Pasión",
       description:
-        "Buscamos la calidad superior en cada entrega, superando expectativas.",
+        "Nos comprometemos con entusiasmo al éxito y la excelencia del cliente.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Proactividad",
+      description: "Anticipamos necesidades y ofrecemos soluciones eficientes.",
     },
     {
       icon: Lightbulb,
       title: "Innovación",
       description:
-        "Aplicamos las últimas metodologías y tecnologías en nuestros servicios.",
-    },
-    {
-      icon: Heart,
-      title: "Compromiso",
-      description:
-        "Nos dedicamos completamente al éxito académico de nuestros clientes.",
+        "Aplicamos ideas y tecnologías que impulsan resultados transformadores.",
     },
   ];
 
@@ -159,11 +171,10 @@ export default function Nosotros() {
                   </div>
                   <h2 className="text-3xl font-bold mb-4">Nuestra Misión</h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    Brindar asesoría académica de excelencia, acompañando a
-                    estudiantes y profesionales en el desarrollo de sus
-                    proyectos de investigación, garantizando calidad,
-                    originalidad y cumplimiento de los más altos estándares
-                    académicos.
+                    Ser aliados estratégicos en investigación académica,
+                    impulsando la innovación, la excelencia y la calidad
+                    profesional, acompañando a nuestros clientes en la
+                    construcción de conocimiento significativo y transformador.
                   </p>
                 </CardContent>
               </Card>
@@ -206,21 +217,49 @@ export default function Nosotros() {
               Nuestros Valores
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Los principios que guían cada una de nuestras acciones y
-              decisiones
+              Ser un faro de innovación e investigación de vanguardia,
+              iluminando el camino del progreso científico, tecnológico y
+              académico de nuestro país hacia nuevos horizontes de excelencia
+              global
             </p>
           </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {valores.map((valor, index) => (
+          {/* Fila superior */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {valores.slice(0, 3).map((valor, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="flex justify-center"
               >
-                <Card className="h-full hover:shadow-xl transition-all hover:-translate-y-1 border-primary/10 hover:border-primary/30 bg-card/50 backdrop-blur-sm">
+                <Card className="max-w-sm w-full hover:shadow-xl transition-all hover:-translate-y-1">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-4">
+                      <valor.icon className="w-8 h-8 text-cyan-400" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{valor.title}</h3>
+                    <p className="text-sm text-muted-foreground">
+                      {valor.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Fila inferior centrada */}
+          <div className="flex justify-center gap-8 flex-wrap">
+            {valores.slice(3).map((valor, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index + 3) * 0.1 }}
+              >
+                <Card className="max-w-sm w-full hover:shadow-xl transition-all hover:-translate-y-1">
                   <CardContent className="p-6 text-center">
                     <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-4">
                       <valor.icon className="w-8 h-8 text-cyan-400" />
@@ -298,113 +337,38 @@ export default function Nosotros() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
+              { icon: Users, title: "Acompañamiento real y humano" },
+              { icon: ClipboardCheck, title: "Metodología comprobada" },
+              { icon: UserCheck, title: "Equipo multidisciplinario de élite" },
               {
-                icon: BookOpen,
-                title: "Experiencia Comprobada",
-                description:
-                  "Más de 10 años asesorando exitosamente proyectos de investigación en todas las áreas del conocimiento.",
+                icon: GraduationCap,
+                title: "Empoderamiento para tu sustentación",
               },
+              { icon: LayoutDashboard, title: "Acceso exclusivo a intranet" },
+              { icon: Handshake, title: "Confianza y formalidad" },
               {
-                icon: Users,
-                title: "Equipo Multidisciplinario",
-                description:
-                  "Contamos con especialistas en diversas áreas para garantizar asesoría experta en tu campo.",
+                icon: Building2,
+                title: "Infraestructura física y presencia digital",
               },
-              {
-                icon: TrendingUp,
-                title: "Resultados Garantizados",
-                description:
-                  "98% de nuestros clientes aprueban sus proyectos en la primera presentación.",
-              },
-              {
-                icon: Sparkles,
-                title: "Metodología Innovadora",
-                description:
-                  "Aplicamos las últimas tendencias en investigación y herramientas tecnológicas de vanguardia.",
-              },
-              {
-                icon: Shield,
-                title: "Confidencialidad Total",
-                description: (
-                  <>
-                    Tu información y proyecto están protegidos con los más altos
-                    estándares de seguridad mediante nuestro{" "}
-                    <HoverCard openDelay={200}>
-                      <HoverCardTrigger asChild>
-                        <a
-                          href="https://intranet.alejandriaconsultora.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-cyan-400 font-medium hover:underline cursor-pointer"
-                        >
-                          sistema de intranet institucional
-                        </a>
-                      </HoverCardTrigger>
-
-                      <HoverCardContent
-                        side="top"
-                        align="center"
-                        className="w-72 p-4 space-y-3 rounded-2xl bg-[rgb(var(--hovercard-bg)/0.95)] text-[rgb(var(--hovercard-text))] border border-[rgb(var(--hovercard-border)/0.35)] backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
-                      >
-                        {/* Header */}
-                        <div className="flex items-center gap-2">
-                          <Shield className="w-5 h-5 text-cyan-400" />
-                          <h3 className="text-sm font-semibold">
-                            Intranet Alejandría
-                          </h3>
-                        </div>
-
-                        {/* Image Preview */}
-                        <div className="relative overflow-hidden rounded-xl border">
-                          <Image
-                            src="/images/intranet/intranet.png"
-                            width={320}
-                            height={180}
-                            alt="Vista del sistema de intranet Alejandría Consultora"
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        </div>
-
-                        {/* Description */}
-                        <p className="text-xs text-muted-foreground leading-relaxed">
-                          Plataforma privada para la gestión segura de
-                          proyectos, entregables y control de accesos
-                          académicos.
-                        </p>
-
-                        {/* Badge */}
-                        <span className="inline-block text-[11px] px-2 py-1 rounded-full bg-cyan-400/10 text-cyan-400">
-                          Acceso seguro • Datos protegidos
-                        </span>
-                      </HoverCardContent>
-                    </HoverCard>
-                    .
-                  </>
-                ),
-              },
-
-              {
-                icon: CheckCircle2,
-                title: "Soporte Continuo",
-                description:
-                  "Te acompañamos en cada etapa del proceso hasta la sustentación exitosa de tu proyecto.",
-              },
+              { icon: BadgeCheck, title: "Respaldo institucional" },
+              { icon: HeartHandshake, title: "Responsabilidad social" },
             ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
+                className="flex justify-center"
               >
-                <Card className="h-full hover:shadow-lg transition-shadow border-primary/10 hover:border-primary/30 bg-card/50 backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <item.icon className="w-12 h-12 text-cyan-400 mb-4" />
-                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                <Card className="w-full max-w-[260px] aspect-square flex items-center justify-center text-center hover:shadow-xl transition-all border-primary/10 hover:border-primary/30 bg-card/50 backdrop-blur-sm">
+                  <CardContent className="flex flex-col items-center justify-center p-6 gap-4">
+                    <item.icon className="w-10 h-10 text-cyan-400" />
+                    <h3 className="text-sm font-semibold uppercase tracking-wide">
+                      {item.title}
+                    </h3>
                   </CardContent>
                 </Card>
               </motion.div>

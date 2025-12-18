@@ -87,19 +87,19 @@ export function AboutSection() {
               },
               {
                 title: "Elaboración de Tesis",
-                desc: "Investigación y redacción completa",
+                desc: "Investigacion, induccion y elaboracion completa",
               },
               {
                 title: "TSP - Trabajo Suficiencia Profesional",
-                desc: "Asesoría especializada",
-              },
-              {
-                title: "Artículos Científicos",
-                desc: "Publicación en revistas indexadas",
+                desc: "Investigacion, induccion y elaboracion completa",
               },
               {
                 title: "Planes de Negocio",
-                desc: "Desarrollo estratégico empresarial",
+                desc: "Investigacion, induccion y elaboracion completa",
+              },
+              {
+                title: "Artículos Científicos",
+                desc:"Adaptacion del aticulo segun formato de revistas indexadas",
               },
             ].map((service, idx) => (
               <motion.div
