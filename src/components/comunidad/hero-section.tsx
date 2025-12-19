@@ -1,10 +1,21 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2, Users } from "lucide-react"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle2, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const handleSkool = () => {
+    const url = "https://skool.com"; // ← replace with the real Skool invite URL
+    window.open(url, "_blank");
+  };
+
+  const handleScrollToBenefits = () => {
+    document
+      .getElementById("beneficios")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-background via-background to-secondary/20 pt-16 pb-20 md:pt-24 md:pb-32 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]">
       {/* Decorative elements */}
@@ -27,44 +38,53 @@ export default function HeroSection() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
-                Conecta con <span className="text-primary">investigadores</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-tight">
+                Crea, conecta y gradúate con el apoyo de una comunidad que te impulsa.
               </h1>
 
               <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">
-                Forma parte de una comunidad vibrante de académicos, investigadores y profesionales comprometidos con la
-                excelencia y el intercambio de conocimiento.
+                Únete a la Comunidad Alejandría, donde estudiantes y
+                profesionales colaboran para redactar, aprobar y sustentar con
+                confianza su tesis, plan de negocio o trabajo de suficiencia
+                profesional. Aprende, haz networking y potencia tu crecimiento
+                académico y profesional.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 px-8"
+                  onClick={handleSkool}
                 >
-                  Únete Ahora
+                  Entrar a la comunidad
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary/10 bg-transparent h-12 px-8"
+                  onClick={handleScrollToBenefits}
                 >
-                  Explorar Comunidad
+                  Conocer beneficios
                 </Button>
               </div>
 
               <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-foreground/60">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>+2,000 Miembros</span>
+                  <span>+500 casos de éxito</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>Eventos Mensuales</span>
+                  <span>98% tasa de aprobación</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>Red Global</span>
+                  <span>+200 estudiantes en Latinoamérica</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>+10 años de experiencia</span>
                 </div>
               </div>
             </div>
@@ -92,9 +112,9 @@ export default function HeroSection() {
 
                   {/* Orbiting circles */}
                   {[0, 60, 120, 180, 240, 300].map((angle, i) => {
-                    const radius = 120
-                    const x = Math.cos((angle * Math.PI) / 180) * radius
-                    const y = Math.sin((angle * Math.PI) / 180) * radius
+                    const radius = 120;
+                    const x = Math.cos((angle * Math.PI) / 180) * radius;
+                    const y = Math.sin((angle * Math.PI) / 180) * radius;
                     return (
                       <div
                         key={i}
@@ -104,7 +124,7 @@ export default function HeroSection() {
                           animationDelay: `${i * 0.2}s`,
                         }}
                       />
-                    )
+                    );
                   })}
                 </div>
               </motion.div>
@@ -113,5 +133,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -19,46 +19,46 @@ import { motion } from "framer-motion";
 
 const features = [
   {
-    icon: Network,
-    title: "Red de Contactos",
+    icon: Users,
+    title: "Acompañamiento colaborativo",
     description:
-      "Conecta con investigadores de tu área y expande tu red profesional a nivel nacional e internacional",
+      "Comparte tus avances y recibe retroalimentación de expertos y compañeros que ya pasaron por el mismo proceso.",
   },
   {
     icon: Calendar,
-    title: "Eventos Exclusivos",
+    title: "Mentorías y talleres en vivo",
     description:
-      "Accede a webinars, talleres y conferencias diseñados para impulsar tu desarrollo profesional",
+      "Domina la metodología de investigación, la estadística y la redacción académica con sesiones prácticas.",
+  },
+  {
+    icon: Network,
+    title: "Networking profesional",
+    description:
+      "Conecta con profesionales de diversas áreas, forma alianzas estratégicas y potencia tu marca personal.",
   },
   {
     icon: MessageSquare,
-    title: "Foros de Discusión",
+    title: "Recursos exclusivos",
     description:
-      "Participa en debates académicos, consulta dudas y comparte tus hallazgos con la comunidad",
-  },
-  {
-    icon: Users,
-    title: "Mentoría Personalizada",
-    description:
-      "Encuentra mentores experimentados o conviértete en guía para investigadores junior",
+      "Clases grabadas por módulos, plantillas, modelos de tesis y simulacros de sustentación para acelerar tu progreso.",
   },
   {
     icon: Award,
-    title: "Proyectos Colaborativos",
+    title: "Preparación para la sustentación",
     description:
-      "Únete a investigaciones multidisciplinarias y amplía el impacto de tu trabajo académico",
+      "Adquiere la seguridad necesaria para sustentar con éxito, acompañado por asesores certificados.",
   },
   {
     icon: Sparkles,
-    title: "Oportunidades de Crecimiento",
+    title: "Comunidad motivacional",
     description:
-      "Accede a convocatorias, becas y oportunidades de financiamiento compartidas por la comunidad",
+      "Aquí nadie se rinde: compartimos logros, frustraciones y soluciones reales para mantenerte enfocado hasta la meta.",
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="py-12 md:py-20 bg-linear-to-br from-secondary/10 via-background to-background">
+    <section id="beneficios" className="py-12 md:py-20 bg-linear-to-br from-secondary/10 via-background to-background">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
