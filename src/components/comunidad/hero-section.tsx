@@ -39,7 +39,7 @@ export default function HeroSection() {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-tight">
-                Crea, conecta y gradúate con el apoyo de una comunidad que te impulsa.
+                Crea, conecta y gradúate con apoyo de una comunidad que te impulsa.
               </h1>
 
               <p className="text-lg text-foreground/80 leading-relaxed max-w-lg">
