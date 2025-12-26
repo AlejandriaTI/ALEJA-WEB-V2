@@ -18,6 +18,15 @@ export default function ThesisPage() {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  const handleWhatsApp = () => {
+    const message =
+      "Hola, vengo desde la página web de Alejandría Consultora quiero empezar con mi tesis.";
+    const phoneNumber = "51989575820";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
   useEffect(() => {
     // eslint-disable-next-line
     setMounted(true);
@@ -323,6 +332,7 @@ export default function ThesisPage() {
                     : "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-[0_0_20px_rgba(251,191,36,0.2)]"
                 }
               `}
+              onClick={handleWhatsApp}
             >
               ¡Quiero empezar con mi tesis!
             </Button>

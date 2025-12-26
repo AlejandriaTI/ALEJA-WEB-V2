@@ -31,7 +31,15 @@ export default function TSPPage() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
+ const handleWhatsApp = () => {
+    const message =
+      "Hola 👋, vengo desde la página web de Alejandría Consultora, quiero empezar con mi tsp";
+    const phoneNumber = "51989575820";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -320,6 +328,7 @@ export default function TSPPage() {
                     : "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-[0_0_20px_rgba(251,191,36,0.2)]"
                 }
               `}
+              onClick={handleWhatsApp}
             >
               ¡Comenzar mi TSP ahora!
             </Button>
