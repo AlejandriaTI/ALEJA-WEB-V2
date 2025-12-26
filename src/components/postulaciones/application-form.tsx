@@ -27,15 +27,30 @@ export function ApplicationForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const form = e.target as HTMLFormElement;
+      const formData = new FormData(form);
 
-    toast.success("¡Postulación enviada!", {
-      description: "Hemos recibido tu aplicación. Te contactaremos pronto.",
-    });
+      const res = await fetch('/api/apply', {
+        method: 'POST',
+        body: formData,
+      });
 
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+      if (!res.ok) {
+        const text = await res.text();
+        toast.error('Error al enviar la postulación: ' + text);
+      } else {
+        toast.success('¡Postulación enviada!', {
+          description: 'Hemos recibido tu aplicación. Te contactaremos pronto.',
+        });
+        form.reset();
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error('Error al enviar la postulación. Intenta de nuevo más tarde.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

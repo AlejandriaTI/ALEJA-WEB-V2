@@ -105,12 +105,8 @@
 
 /* Navy Theme (Sistema/Por defecto) */
 .navy {
-  --background: linear-gradient(
-    to top,
-    #1c1c34,
-    #1c1c34 60%,
-    #424256
-  );
+   --background:  rgb(28 28 52 / 1);
+  
     --foreground: #ffffff;
 
   --card: #24244a80;                /* derivado del fondo con transparencia */
