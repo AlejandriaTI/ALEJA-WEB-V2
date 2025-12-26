@@ -22,15 +22,14 @@ export function Navbar() {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const { theme, resolvedTheme } = useTheme();
   const hasMounted = useHasMounted();
-   const handleWhatsApp = () => {
-      const message =
-        "Hola, me gustaría recibir informacion.";
-      const phoneNumber = "51989575820";
-      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-        message
-      )}`;
-      window.open(url, "_blank");
-    };
+  const handleWhatsApp = () => {
+    const message = "Hola, me gustaría recibir informacion.";
+    const phoneNumber = "51989575820";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
 
   const currentTheme = hasMounted
     ? theme === "system"
@@ -214,14 +213,13 @@ export function Navbar() {
                     ? "border-gray-300 text-gray-700 hover:bg-primary/10 hover:border-primary/50"
                     : "border-[#26263F] text-white hover:bg-primary/10 hover:border-primary/50"
                 }`}
-
                 onClick={() => {
-                setIsOpen(false);
-                window.open(
-                  "https://intranet.alejandriaconsultora.com/",
-                  "_blank"
-                );
-              }}
+                  setIsOpen(false);
+                  window.open(
+                    "https://intranet.alejandriaconsultora.com/",
+                    "_blank"
+                  );
+                }}
               >
                 {currentTheme === "light" ? (
                   <Image

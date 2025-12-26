@@ -24,9 +24,9 @@ import {
   UserCheck,
   CheckCircle2,
 } from "lucide-react";
+import Link from "next/link";
 
 import { motion } from "framer-motion";
-
 
 export default function Nosotros() {
   const valores = [
@@ -87,6 +87,15 @@ export default function Nosotros() {
     },
   ];
 
+  const handleWhatsApp = () => {
+    const message =
+      "Hola 👋, vengo desde la página web de Alejandría Consultora y me gustaría solicitar una asesoría.";
+    const phoneNumber = "51989575820";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
   const estadisticas = [
     { numero: "500+", label: "Tesis Completadas", icon: GraduationCap },
     { numero: "98%", label: "Tasa de Aprobación", icon: CheckCircle2 },
@@ -391,12 +400,22 @@ export default function Nosotros() {
                   académicas con nuestra ayuda
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="text-lg px-8">
+                  <Button
+                    size="lg"
+                    className="text-lg px-8"
+                    onClick={handleWhatsApp}
+                  >
                     Solicitar Asesoría
                   </Button>
-                  <Button size="lg" variant="outline" className="text-lg px-8">
-                    Ver Servicios
-                  </Button>
+                  <Link href="/planes">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="text-lg px-8"
+                    >
+                      Ver Servicios
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
