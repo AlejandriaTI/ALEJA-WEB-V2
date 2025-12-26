@@ -44,11 +44,12 @@ export function Navbar() {
       subItems: [
         { label: "Tesis", href: "/servicios/tesis" },
         { label: "TSP", href: "/servicios/tsp" },
+        { label: "Plan de Negocio", href: "/servicios/plan-negocio" },
+
         {
           label: "Articulo Cientifico",
           href: "/servicios/articulo-cientifico",
         },
-        { label: "Plan de Negocio", href: "/servicios/plan-negocio" },
         { label: "Comunidad", href: "/servicios/comunidad" },
       ],
     },

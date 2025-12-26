@@ -76,8 +76,8 @@ export default function ScientificArticlePage() {
               isLight ? "text-gray-700" : "text-white"
             }`}
           >
-            Asesoría especializada para la redacción y publicación de Artículos
-            Científicos en revistas indexadas (Scopus, WoS, Latindex).
+            Asesoría especializada para la adaptación de Artículos Científicos
+            en revistas indexadas (Scopus, WoS, Scielo o otros).
           </motion.p>
 
           <motion.div
@@ -358,8 +358,8 @@ export default function ScientificArticlePage() {
               <span className="uppercase font-extrabold">ÉXITO ACADÉMICO</span>
             </p>
           </motion.h2>
-
           <div className="grid md:grid-cols-2 gap-12">
+            {/* Columna izquierda */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -370,30 +370,25 @@ export default function ScientificArticlePage() {
               {[
                 {
                   num: "01",
-                  title: "Selección del Journal",
-                  desc: "Identificamos la revista ideal según tu tema y objetivos.",
+                  title: "Recepción de documentos",
+                  desc: "Recepcionamos tu tesis o artículo y el nombre de la revista seleccionada.",
                 },
                 {
                   num: "03",
-                  title: "Traducción Técnica",
-                  desc: "Adaptamos tu paper al inglés académico si la revista lo requiere.",
-                },
-                {
-                  num: "05",
-                  title: "Levantamiento de Obs.",
-                  desc: "Corregimos según el feedback de los revisores expertos.",
+                  title: "Entrega del trabajo adaptado",
+                  desc: "Entregamos el documento final y levantamos observaciones para futuras mejoras.",
                 },
               ].map((item, i) => (
-                <Card key={i} className={`p-6 transition `}>
+                <Card key={i} className="p-6 transition">
                   <div className="flex items-start gap-4 mb-4">
                     <div
                       className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 border ${
                         isLight
                           ? "bg-primary/10 border-primary/20"
-                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20 group-hover:bg-[#0CB2D5]/20 transition-colors"
+                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20"
                       }`}
                     >
-                      <Search
+                      <FileText
                         className={`w-8 h-8 ${
                           isLight ? "text-primary" : "text-[#0CB2D5]"
                         }`}
@@ -407,6 +402,7 @@ export default function ScientificArticlePage() {
                       {item.num}
                     </p>
                   </div>
+
                   <h3
                     className={`font-bold text-xl mb-2 ${
                       isLight ? "text-gray-900" : "text-white"
@@ -414,6 +410,7 @@ export default function ScientificArticlePage() {
                   >
                     {item.title}
                   </h3>
+
                   <p className={isLight ? "text-gray-600" : "text-slate-400"}>
                     {item.desc}
                   </p>
@@ -421,6 +418,7 @@ export default function ScientificArticlePage() {
               ))}
             </motion.div>
 
+            {/* Columna derecha */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -431,21 +429,11 @@ export default function ScientificArticlePage() {
               {[
                 {
                   num: "02",
-                  title: "Redacción Rigurosa",
-                  desc: "Estructura IMRyD y normas de citación impecables.",
-                },
-                {
-                  num: "04",
-                  title: "Envío y Gestión",
-                  desc: "Nos encargamos de todo el proceso de sumisión en la plataforma.",
-                },
-                {
-                  num: "06",
-                  title: "Carta de Aceptación",
-                  desc: "Recibes la confirmación oficial de tu publicación.",
+                  title: "Adaptación del documento",
+                  desc: "Adaptamos el contenido según la guía editorial de la revista elegida por el cliente.",
                 },
               ].map((item, i) => (
-                <Card key={i} className={`p-6 transition md:mt-24`}>
+                <Card key={i} className="p-6 transition md:mt-24">
                   <div className="flex items-start gap-4 mb-4">
                     <p
                       className={`text-4xl font-bold opacity-50 ${
@@ -458,7 +446,7 @@ export default function ScientificArticlePage() {
                       className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 border ${
                         isLight
                           ? "bg-primary/10 border-primary/20"
-                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20 group-hover:bg-[#0CB2D5]/20 transition-colors"
+                          : "bg-[#0CB2D5]/10 border-[#0CB2D5]/20"
                       }`}
                     >
                       <PenTool
@@ -468,6 +456,7 @@ export default function ScientificArticlePage() {
                       />
                     </div>
                   </div>
+
                   <h3
                     className={`font-bold text-xl mb-2 ${
                       isLight ? "text-gray-900" : "text-white"
@@ -475,6 +464,7 @@ export default function ScientificArticlePage() {
                   >
                     {item.title}
                   </h3>
+
                   <p className={isLight ? "text-gray-600" : "text-slate-400"}>
                     {item.desc}
                   </p>
