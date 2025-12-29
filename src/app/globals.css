@@ -240,6 +240,10 @@
     @apply bg-background text-foreground;
   }
 
+body {
+  background-color: var(--background);
+  background-image: var(--background-gradient);
+}
 
   main {
     @apply bg-background text-foreground;
