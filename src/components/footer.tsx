@@ -1,5 +1,6 @@
 "use client";
 
+
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
@@ -35,31 +36,37 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-foreground font-semibold">Servicios</h4>
             <ul className="space-y-2 text-sm">
-              {["Tesis", "TSP", "Artículos", "Planes de Negocio"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="hover:text-primary transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                )
-              )}
+              {[
+                { label: "Tesis", href: "/servicios/tesis" },
+                { label: "TSP", href: "/servicios/tsp" },
+                { label: "Artículos", href: "/servicios/articulo-cientifico" },
+                { label: "Planes de Negocio", href: "/servicios/plan-negocio" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           {/* Promociones */}
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Promociones</h4>
             <ul className="space-y-2 text-sm">
-              {["Planes", "Catalogos"].map((item) => (
-                <li key={item}>
+              {[
+                { label: "Planes", href: "/planes" },
+                { label: "Catalogos", href: "/medios/catalogos" },
+              ].map((item) => (
+                <li key={item.href}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -70,13 +77,18 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-foreground font-semibold">Empresa</h4>
             <ul className="space-y-2 text-sm">
-              {["Nosotros", "Blog", "Contacto", "Videos"].map((item) => (
-                <li key={item}>
+              {[
+                { label: "Nosotros", href: "/nosotros" },
+                { label: "Blog", href: "/medios/blog" },
+                { label: "Contacto", href: "/#contacto" },
+                { label: "Videos", href: "/medios/videos" },
+              ].map((item) => (
+                <li key={item.href}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}

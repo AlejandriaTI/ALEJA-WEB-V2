@@ -198,8 +198,17 @@ export default function Promociones() {
     }
     acc[plan.title].push(plan);
     return acc;
+
   }, {} as Record<string, typeof plans>);
 
+  const handleWhatsApp = (title: string, name: string) => {
+    const message = `Hola 👋, vengo desde la página web de Alejandría Consultora. Estoy interesado en el plan de ${title} categoría ${name}.`;
+    const phoneNumber = "51989575820"; 
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
   return (
     <main className="py-16 px-4 mt-22">
       <div className="max-w-7xl mx-auto space-y-16">
@@ -315,7 +324,11 @@ export default function Promociones() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                         >
-                          <Button className="w-full mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
+                          <Button
+                            onClick={() => handleWhatsApp(plan.title, plan.name)}
+                            className="w-full mt-6 bg-primary hover:bg-primary/90 text-primary-foreground"
+                            type="button"
+                          >
                             Agregar al carrito →
                           </Button>
                         </motion.div>
