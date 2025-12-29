@@ -94,7 +94,8 @@ export default function BusinessPlanPage() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="mt-10 flex justify-center gap-4"
           >
-            <Button className="px-8 py-3 rounded-full font-semibold bg-[#0CB2D5] text-white shadow-md shadow-[#0CB2D5]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#0CB2D5]/50 hover:-translate-y-px active:translate-y-0">
+            <Button className="px-8 py-3 rounded-full font-semibold bg-[#0CB2D5] text-white shadow-md shadow-[#0CB2D5]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#0CB2D5]/50 hover:-translate-y-px active:translate-y-0"
+            onClick={handleWhatsApp}>
               Quiero emprender
             </Button>
 

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { useHasMounted } from "@/hooks/use-has-mounted";
+import Link from "next/link";
 
 export default function TSPPage() {
   const { theme, resolvedTheme } = useTheme();
@@ -31,7 +32,7 @@ export default function TSPPage() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
- const handleWhatsApp = () => {
+  const handleWhatsApp = () => {
     const message =
       "Hola 👋, vengo desde la página web de Alejandría Consultora, quiero empezar con mi tsp";
     const phoneNumber = "51989575820";
@@ -87,13 +88,17 @@ export default function TSPPage() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="mt-10 flex justify-center gap-4"
           >
-            <Button className="px-8 py-3 rounded-full font-semibold bg-[#0CB2D5] text-white shadow-md shadow-[#0CB2D5]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#0CB2D5]/50 hover:-translate-y-px active:translate-y-0">
+
+            <Button className="px-8 py-3 rounded-full font-semibold bg-[#0CB2D5] text-white shadow-md shadow-[#0CB2D5]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#0CB2D5]/50 hover:-translate-y-px active:translate-y-0"
+            onClick={handleWhatsApp}>
+
               Quiero titularme ya
             </Button>
-
-            <Button className="px-8 py-3 rounded-full font-medium border border-[#0CB2D5] text-[#0CB2D5] bg-transparent transition-all duration-300 hover:bg-[#0CB2D5]/10">
-              Saber más
-            </Button>
+            <Link href="/planes">
+              <Button className="px-8 py-3 rounded-full font-medium border border-[#0CB2D5] text-[#0CB2D5] bg-transparent transition-all duration-300 hover:bg-[#0CB2D5]/10">
+                Saber más
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

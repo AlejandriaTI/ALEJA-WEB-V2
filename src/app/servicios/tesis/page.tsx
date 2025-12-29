@@ -6,13 +6,13 @@ import {
   Brain,
   Trophy,
   Users,
-  CheckCircle2,
   Star,
 } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ThesisPage() {
   const { theme, resolvedTheme } = useTheme();
@@ -94,13 +94,15 @@ export default function ThesisPage() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="mt-10 flex justify-center gap-4"
           >
-            <Button className="px-8 py-3 rounded-full font-semibold bg-[#0CB2D5] text-white shadow-md shadow-[#0CB2D5]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#0CB2D5]/50 hover:-translate-y-px active:translate-y-0">
+            <Button className="px-8 py-3 rounded-full font-semibold bg-[#0CB2D5] text-white shadow-md shadow-[#0CB2D5]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#0CB2D5]/50 hover:-translate-y-px active:translate-y-0"
+            onClick={handleWhatsApp}>
               Comenzar ahora
             </Button>
-
+            <Link href="/planes">
             <Button className="px-8 py-3 rounded-full font-medium border border-[#0CB2D5] text-[#0CB2D5] bg-transparent transition-all duration-300 hover:bg-[#0CB2D5]/10">
               Ver servicios
             </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
