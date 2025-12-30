@@ -1,9 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "TSP - Alejandría Consultora",
-  description: "Convierte tu experiencia laboral en Título Profesional con el Trabajo de Suficiencia Profesional (TSP) de Alejandría Consultora.",
-};
 
 "use client";
 import { Button } from "@/components/ui/button";
@@ -14,6 +8,12 @@ import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { useHasMounted } from "@/hooks/use-has-mounted";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "TSP - Alejandría Consultora",
+  description: "Convierte tu experiencia laboral en Título Profesional con el Trabajo de Suficiencia Profesional (TSP) de Alejandría Consultora.",
+};
 
 export default function TSPPage() {
   const { theme, resolvedTheme } = useTheme();

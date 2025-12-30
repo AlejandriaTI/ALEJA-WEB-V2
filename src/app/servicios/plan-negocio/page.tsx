@@ -1,9 +1,4 @@
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Plan de Negocio - Alejandría Consultora",
-  description: "Desarrollamos Planes de Negocio estratégicos para titulación, búsqueda de inversionistas y lanzamiento de emprendimientos.",
-};
 
 "use client";
 import { Button } from "@/components/ui/button";
@@ -21,7 +16,12 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { useHasMounted } from "@/hooks/use-has-mounted";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Plan de Negocio - Alejandría Consultora",
+  description: "Desarrollamos Planes de Negocio estratégicos para titulación, búsqueda de inversionistas y lanzamiento de emprendimientos.",
+};
 export default function BusinessPlanPage() {
   const { theme, resolvedTheme } = useTheme();
   const hasMounted = useHasMounted();

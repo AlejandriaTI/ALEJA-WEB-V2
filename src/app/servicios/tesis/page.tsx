@@ -1,9 +1,4 @@
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Tesis - Alejandría Consultora",
-  description: "Asesoría especializada en tesis para pregrado y postgrado. Transformamos tus ideas en resultados tangibles con investigación, estrategia y tecnología.",
-};
 
 "use client";
 import { Button } from "@/components/ui/button";
@@ -20,7 +15,12 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Tesis - Alejandría Consultora",
+  description: "Asesoría especializada en tesis para pregrado y postgrado. Transformamos tus ideas en resultados tangibles con investigación, estrategia y tecnología.",
+};
 export default function ThesisPage() {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -593,7 +593,7 @@ export default function ThesisPage() {
               </motion.div>
             ))}
           </motion.div>
-          
+
        
         </div>
       </section>

@@ -1,10 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Videos - Alejandría Consultora",
-  description: "Explora la videoteca de Alejandría Consultora con contenido sobre tecnología, ciencia, educación e investigación.",
-};
-
 "use client";
 
 import { useState } from "react";
@@ -13,7 +6,13 @@ import VideoHeroCard from "@/components/videos/video-hero-card";
 import VideoGrid from "@/components/videos/video-grid";
 import { videos } from "@/data/videos";
 import { VideoHeader } from "@/components/videos/video-header";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Videos - Alejandría Consultora",
+  description:
+    "Explora la videoteca de Alejandría Consultora con contenido sobre tecnología, ciencia, educación e investigación.",
+};
 const filters = [
   { label: "Todos", count: null },
   { label: "Tecnología", count: null },

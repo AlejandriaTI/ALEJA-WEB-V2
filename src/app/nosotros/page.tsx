@@ -1,9 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Nosotros - Alejandría Consultora",
-  description: "Conoce a Alejandría Consultora: Nuestra misión, visión, valores y el equipo de expertos que te ayudará a alcanzar el éxito académico.",
-};
 
 "use client";
 
@@ -32,6 +26,12 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nosotros - Alejandría Consultora",
+  description: "Conoce a Alejandría Consultora: Nuestra misión, visión, valores y el equipo de expertos que te ayudará a alcanzar el éxito académico.",
+};
 
 import { motion } from "framer-motion";
 
