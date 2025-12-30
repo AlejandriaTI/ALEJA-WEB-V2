@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Artículo Científico - Alejandría Consultora",
+  description: "Asesoría especializada para la adaptación y publicación de Artículos Científicos en revistas indexadas (Scopus, WoS, Scielo y otros).",
+};
+
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";

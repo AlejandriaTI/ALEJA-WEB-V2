@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "La Biblia del Tesista - Alejandría Consultora",
+  description: "Descubre 'La Biblia del Tesista', la guía definitiva para tu tesis. Incluye bonos exclusivos y garantía de éxito académico.",
+};
+
 "use client";
 
 import { motion } from "framer-motion";

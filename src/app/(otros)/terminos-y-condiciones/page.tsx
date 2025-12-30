@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Términos y Condiciones - Alejandría Consultora",
+  description: "Lee los términos y condiciones de uso de los servicios de Alejandría Consultora, incluyendo información sobre pagos, privacidad y resolución de conflictos.",
+};
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

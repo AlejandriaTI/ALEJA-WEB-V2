@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Libro de Reclamaciones - Alejandría Consultora",
+  description: "Formulario oficial de Libro de Reclamaciones de Alejandría Consultora. Presenta tus reclamos o quejas sobre nuestros productos y servicios.",
+};
+
 "use client";
 
 import React from "react";
@@ -419,6 +426,7 @@ export default function LibroReclamaciones() {
                       value={values.pedido_cliente}
                       onChange={(e) =>
                         handleChange("pedido_cliente", e.target.value)
+
                       }
                     />
                   </div>

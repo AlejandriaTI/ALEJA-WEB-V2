@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tesis - Alejandría Consultora",
+  description: "Asesoría especializada en tesis para pregrado y postgrado. Transformamos tus ideas en resultados tangibles con investigación, estrategia y tecnología.",
+};
+
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -105,6 +112,7 @@ export default function ThesisPage() {
             </Link>
           </motion.div>
         </div>
+
       </section>
 
       {/* Intro Section */}
@@ -582,8 +590,8 @@ export default function ThesisPage() {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>

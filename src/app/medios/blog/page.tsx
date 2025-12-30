@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog - Alejandría Consultora",
+  description: "Explora el blog de Alejandría Consultora con artículos sobre grados y títulos, ciencia, emprendimiento y tecnología.",
+};
+
 "use client";
 
 import { useState } from "react";

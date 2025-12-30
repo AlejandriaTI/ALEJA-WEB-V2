@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Share2, Bookmark, ChevronLeft, Calendar, Clock } from "lucide-react";
@@ -5,13 +6,23 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getVideoBySlug } from "@/data/videos";
 import { VideoContent } from "@/components/videos/video-content";
+
+type Props = { params: { id: string } };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const video = getVideoBySlug(params.id);
+  return {
+    title: video ? video.title : "Video no encontrado",
+    description: video ? video.excerpt : "",
+  };
+}
+
 export default async function VideoDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
-
+  const { id } = params;
   const video = getVideoBySlug(id);
 
   if (!video) {

@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Plan de Negocio - Alejandría Consultora",
+  description: "Desarrollamos Planes de Negocio estratégicos para titulación, búsqueda de inversionistas y lanzamiento de emprendimientos.",
+};
+
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";

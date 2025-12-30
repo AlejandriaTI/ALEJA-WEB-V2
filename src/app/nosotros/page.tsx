@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nosotros - Alejandría Consultora",
+  description: "Conoce a Alejandría Consultora: Nuestra misión, visión, valores y el equipo de expertos que te ayudará a alcanzar el éxito académico.",
+};
+
 "use client";
 
 import { Button } from "@/components/ui/button";

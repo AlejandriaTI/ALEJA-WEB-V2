@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Planes - Alejandría Consultora",
+  description: "Descubre los planes de asesoría académica de Alejandría Consultora: Básico, Intermedio y Avanzado para tesis de pregrado y maestría.",
+};
+
 "use client";
 
 import { Button } from "@/components/ui/button";

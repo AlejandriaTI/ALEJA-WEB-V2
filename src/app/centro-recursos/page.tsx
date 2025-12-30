@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Centro de Recursos - Alejandría Consultora",
+  description: "Accede al centro de recursos de Alejandría Consultora: Explora libros, guías y herramientas para potenciar tu investigación y éxito académico.",
+};
+
 import HeroSection from "@/components/centro-recursos/hero-section";
 import BooksGallery from "@/components/centro-recursos/books-gallery";
 import CTASection from "@/components/centro-recursos/cta-section";
