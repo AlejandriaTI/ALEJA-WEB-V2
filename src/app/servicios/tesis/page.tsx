@@ -590,9 +590,11 @@ export default function ThesisPage() {
                     </div>
                   </div>
                 </Card>
-              ))}
-            </motion.div>
+              </motion.div>
+            ))}
           </motion.div>
+          
+       
         </div>
       </section>
     </div>

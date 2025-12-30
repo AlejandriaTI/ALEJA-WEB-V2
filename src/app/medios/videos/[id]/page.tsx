@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const video = getVideoBySlug(params.id);
   return {
     title: video ? video.title : "Video no encontrado",
-    description: video ? video.excerpt : "",
+    description: video ? video.description : "",
   };
 }
 
