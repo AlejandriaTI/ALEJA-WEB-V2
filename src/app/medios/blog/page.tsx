@@ -1,9 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Blog - Alejandría Consultora",
-  description: "Explora el blog de Alejandría Consultora con artículos sobre grados y títulos, ciencia, emprendimiento y tecnología.",
-};
 
 "use client";
 
@@ -13,6 +7,12 @@ import HeroCard from "@/components/blog/hero-card";
 import ArticleGrid from "@/components/blog/article-grid";
 import { articles } from "@/data/blog-articles";
 import { BlogHeader } from "@/components/blog/blog-header";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog - Alejandría Consultora",
+  description: "Explora el blog de Alejandría Consultora con artículos sobre grados y títulos, ciencia, emprendimiento y tecnología.",
+};
 
 const filters = [
   { label: "All", count: null },

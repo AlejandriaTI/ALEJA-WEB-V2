@@ -1,9 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Libro de Reclamaciones - Alejandría Consultora",
-  description: "Formulario oficial de Libro de Reclamaciones de Alejandría Consultora. Presenta tus reclamos o quejas sobre nuestros productos y servicios.",
-};
 
 "use client";
 
@@ -42,6 +36,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Libro de Reclamaciones - Alejandría Consultora",
+  description: "Formulario oficial de Libro de Reclamaciones de Alejandría Consultora. Presenta tus reclamos o quejas sobre nuestros productos y servicios.",
+};
 
 export default function LibroReclamaciones() {
   const [isSubmitting, setIsSubmitting] = useState(false);
