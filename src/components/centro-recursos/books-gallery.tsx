@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  ArrowRight,
   BookOpen,
   CheckCircle2,
   X,
@@ -178,13 +177,7 @@ export default function BooksGallery() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-foreground/60 mb-4">¿Buscas más recursos?</p>
-          <button className="text-primary font-semibold hover:text-primary/80 inline-flex items-center gap-2 transition-colors">
-            Ver todo el catálogo
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
+        
       </div>
 
       {/* Detail Modal using Framer Motion */}

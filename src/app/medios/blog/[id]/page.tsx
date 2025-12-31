@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Share2, Bookmark, ChevronLeft } from "lucide-react";
@@ -6,12 +7,22 @@ import { Badge } from "@/components/ui/badge";
 import { getArticleById } from "@/data/blog-articles";
 import { ArticleContent } from "@/components/blog/article-content";
 
+type Props = { params: { id: string } };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = getArticleById(params.id);
+  return {
+    title: article ? article.title : "Artículo no encontrado",
+    description: article ? article.excerpt : "",
+  };
+}
+
 export default async function ArticlePage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } = params;
   const article = getArticleById(id);
 
   if (!article) {
@@ -21,7 +32,7 @@ export default async function ArticlePage({
           <h1 className="text-2xl font-bold text-foreground">
             Artículo no encontrado
           </h1>
-          <Link href="/blog">
+          <Link href="/medios/blog">
             <Button>Volver al blog</Button>
           </Link>
         </div>
