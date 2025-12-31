@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-
-
-
 import HeroSection from "@/components/centro-recursos/hero-section";
 import BooksGallery from "@/components/centro-recursos/books-gallery";
 import CTASection from "@/components/centro-recursos/cta-section";
