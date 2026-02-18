@@ -154,7 +154,7 @@ export default async function VideoDetailPage({
 
           {/* Related Videos CTA */}
           <div className="border-t border-border pt-8 flex justify-center">
-            <Link href="/videos">
+            <Link href="/medios/videos">
               <Button size="lg">Ver más videos</Button>
             </Link>
           </div>

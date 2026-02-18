@@ -130,7 +130,7 @@ export default async function ArticlePage({
 
           {/* Related Articles CTA */}
           <div className="border-t border-border pt-8 flex justify-center">
-            <Link href="/blog">
+            <Link href="/medios/blog">
               <Button size="lg">Ver más artículos</Button>
             </Link>
           </div>
