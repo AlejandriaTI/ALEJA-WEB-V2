@@ -7,10 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { getVideoBySlug } from "@/data/videos";
 import { VideoContent } from "@/components/videos/video-content";
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const video = getVideoBySlug(params.id);
+  const { id } = await params;
+  const video = getVideoBySlug(id);
   return {
     title: video ? video.title : "Video no encontrado",
     description: video ? video.description : "",
@@ -20,9 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function VideoDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const { id } = await params;
   const video = getVideoBySlug(id);
 
   if (!video) {
@@ -58,7 +59,7 @@ export default async function VideoDetailPage({
           {/* Video Player */}
           <div className="relative rounded-lg overflow-hidden mb-8 bg-card aspect-video">
             {video.videoUrl.includes("youtube.com") ||
-            video.videoUrl.includes("youtu.be") ? (
+              video.videoUrl.includes("youtu.be") ? (
               <iframe
                 src={video.videoUrl.replace("watch?v=", "embed/")}
                 className="w-full h-full"

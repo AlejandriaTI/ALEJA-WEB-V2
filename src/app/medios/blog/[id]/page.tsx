@@ -7,10 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { getArticleById } from "@/data/blog-articles";
 import { ArticleContent } from "@/components/blog/article-content";
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = getArticleById(params.id);
+  const { id } = await params;
+  const article = getArticleById(id);
   return {
     title: article ? article.title : "Artículo no encontrado",
     description: article ? article.excerpt : "",
@@ -20,9 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ArticlePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const { id } = await params;
   const article = getArticleById(id);
 
   if (!article) {
